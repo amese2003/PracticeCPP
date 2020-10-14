@@ -32,7 +32,7 @@ void maxFlow(int start, int end) {
             for (int i = 0; i < connect_node[current].size(); i++) {
                 int next_node = connect_node[current][i];
 
-                if (capacity[current][next_node] - flow[current][next_node] > 0 && visit_from[next_node] == -1) {
+                if (capacity[current][next_node] > flow[current][next_node] && visit_from[next_node] == -1) {
                     visit.push(next_node);
                     visit_from[next_node] = current;
 

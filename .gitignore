@@ -37,3 +37,4 @@ Release
 *.VC.db
 *.ipch
 *.uso
+/repos/CodingInterview/.vs/CodingInterview/v16
