@@ -2,32 +2,42 @@
 
 using namespace std;
 
-// 오늘의 주제 : 문자와 문자열
-// bool은 그냥 정수지만, 참/거짓을 나타내기 위해 사용
-// 사실 char도 마찬가지. 그냥 정수지만 '문자' 의미를 나타내기 위해 사용
-
-// char : 알파벳 / 숫자 문자
-// wchar_t : 유니코드 문자를 나타낸다
-
-// unicode
-// 복습
-// UTF8
-// - 알파벳, 숫자 1바이트 (ASCII 동일)
-// - 유렵 지역의 문자는 2바이트
-// - 한글, 한자 등 3바이트
-
-// UTF16
-// - 알파벳, 숫자, 한글, 한자 등 거의 대부분 문자 2바이트
-// - 매~~~우 예외적인 고대 문자만 4바이트 (사실상 무시해도 됨)
-
-// wchar_t test = L'안';
+// 오늘의 주제 : 데이터 연산
 
 unsigned char flag; // 부호를 없애야 >> 를 해도 부호가 딸려오지 않음!
+
+// 한번 정해지면 절때 바뀌지 않을 값들
+// const를 붙였으면 초기값 반드시 지정
+// 변수의 상수화
+
+
+// 그러면 const도 바뀌지 않는 읽기 전용일까?
+// .rodata?
+// 사실 c++ 표준에서 꼭 그렇게 하라는 말이 없음
+// 그냥 컴파일러 마음임.
+const int AIR = 0;
+const int STUN = 1;
+const int POLYMORPH = 2;
+const int INVINCIBLE = 3;
+
+// [데이터 영역]
+// .data (초기값 있는 경우)
+int rax = 1;
+
+// .bss (초기값 없는 경우)
+int ebx;
+
+// .rodate (읽기 전용 데이터)
+const char* msg = "Hello World";
 
 
 int main()
 {
-    bool a = 1;
+    // 이건 스택 영역에다가 들어감.
+    const int asd = 11;
+
+    // [스택 영역]
+    int c = 1;
 
 #pragma region 비트연산
     
@@ -70,10 +80,10 @@ int main()
     // 0b0000 [무적][변이][스턴][공중부양]
 
     // 무적?
-    flag = (1 << 3);
+    flag = (1 << INVINCIBLE);
     
     // 변이 상태 추가 (무적 + 변이)
-    flag |= (1 << 2);
+    flag |= (1 << POLYMORPH);
 
     // 무적인지 확인하고 싶다
     // bitmask
