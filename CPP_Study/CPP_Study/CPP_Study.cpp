@@ -13,13 +13,30 @@ using namespace std;
 
 int main()
 {
-    int hp = 123;
-    int maxHp = 1000;
-    
-    // int / int = int;
+    // 별찍기
 
-    // int / float float / int  = float
-    float ratio = hp / maxHp;
+    int input;
+    cin >> input;
+
+
+    for (int i = 0; i < input; i++) {
+        
+        for (int j = 0; j < input; j++)
+            cout << "*";
+
+        cout << "\n";
+    }
+
+    // 별찍기 2)
+    // 음.. n*n개의 별은 좀 심심하다?
+
+    for (int i = 0; i < input; i++) {
+        for (int j = input - i; j > 0; j--)
+            cout << "*";
+
+        cout << "\n";
+    }
+
 
     return 0;
 }
