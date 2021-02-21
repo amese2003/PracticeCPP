@@ -13,30 +13,85 @@ using namespace std;
 
 int main()
 {
-    // 별찍기
+    srand(time(0));
 
+    
+    string output = "";
     int input;
-    cin >> input;
+
+    int total = 0;
+    int win = 0;
+
+    const int SCISSORS = 1;
+    const int ROCK = 2;
+    const int PAPER = 3;
+
+    const int END = 4;
+
+    while (true) {
+        int value = 1 + rand() % 3; // 
+        cout << "가위(1), 바위(2), 보(3)를 입력해주세요. 종료(4)" << endl;
+
+        if (total == 0) {
+            cout << "정보 없음" << endl;
+        }
+        else {
+            float ratio = (win * 100) / total;
+            cout << "현재 승률 : " << ratio << endl;
+        }
 
 
-    for (int i = 0; i < input; i++) {
-        
-        for (int j = 0; j < input; j++)
-            cout << "*";
+        cin >> input;
 
-        cout << "\n";
+        if (input == SCISSORS) {
+            if (value == ROCK) {
+                output = "패!";
+            }
+            else if (value == PAPER) {
+                output = "승!";
+                win++;
+            }
+            else {
+                output = "비김!";
+            }
+
+            total++;
+            cout << output << endl;
+        }
+        else if (input == ROCK) {
+            if (value == ROCK) {
+                output = "패!";
+            }
+            else if (value == SCISSORS) {
+                output = "승!";
+                win++;
+            }
+            else {
+                output = "비김!";
+            }
+
+            total++;
+            cout << output << endl;
+        }
+        else if (input == PAPER) {
+            if (value == SCISSORS) {
+                output = "패!";
+            }
+            else if (value == ROCK) {
+                output = "승!";
+                win++;
+            }
+            else {
+                output = "비김!";
+            }
+            cout << output << endl;
+        }
+        else if (input == END) {
+            break;
+        }
+        else {
+            cout << "뭘 낸겁니까?" << endl;
+        }
     }
-
-    // 별찍기 2)
-    // 음.. n*n개의 별은 좀 심심하다?
-
-    for (int i = 0; i < input; i++) {
-        for (int j = input - i; j > 0; j--)
-            cout << "*";
-
-        cout << "\n";
-    }
-
-
     return 0;
 }
