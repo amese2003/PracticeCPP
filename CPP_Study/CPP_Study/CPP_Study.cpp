@@ -2,195 +2,58 @@
 
 using namespace std;
 
-// 오늘의 주제 : TextRPG
+// 오늘의 주제 : 포인터
 
-int playerType;
-int hp;
-int attack;
-int defence;
+void SetHp(int* hp) {
+	*hp = 100;
 
-int monsterType;
-int monsterHp;
-int monsterAttack;
-int monsterDefence;
-
-struct ObjectInfo {
-	int type;
-	int hp;
-	int attack;
-	int defence;
-};
-
-enum PlayerType {
-	PT_Knight = 1,
-	PT_Archer = 2,
-	PT_Mage = 3
-};
-
-enum MonsterType {
-	MT_Slime = 1,
-	MT_Orc = 2,
-	MT_Skeleton = 3,
-};
-
-void EnterLobby();
-void SelectPlayer();
-void EnterField();
-void CreateRandomMonster();
+	cout << hp << endl;
+	cout << *hp << endl;
+}
 
 
 int main() {
-	srand(time(0));
-	EnterLobby();
+	int number = 1;
+
+	int hp;
+
+	cout << &hp << endl;
+	SetHp(&hp);
+
+	cout << "수정 끝"  << hp << endl;
+
+
+	// 바구니는 바구니인데...
+	// [주소를 저장하는 바구니다!]
+	// 변수 선언할 때 * 등장했다? -> 포인터 = 주소
+	// 참고) 포인터라는 바구니는 4바이트(32비트) 8바이트(64비트) 고정크기
+	int* ptr = &number;
+
+	// 근데 남의 주소를 가지고 뭘 하라는거지?
+	// 추가 문법 : [주소 저장 바구니가]가리키는 주소로 가서 무엇인가 해라!
+	// *변수이름 = 값
+
+	// 포탈을 타고 순간이동 한다고 생각보자.
+	// *이 여러번 등장하니 헷갈리는데, 사용 시점에 따라서 구분해서 기억해보자.
+	// - 변수 선언 (주소를 저장하는 바구니!)
+	// - 사용할 때 (포탈 타고 순간이동)
+
+	int value1 = *ptr;
+	*ptr = 2;
+
+	// TYPE은 왜 붙일까?
+	// * = 포인터의 의미 = 주소를 저장하는 바구니 = 4/8바이트 고정 크기
+	// 그럼 int는 왜?
+
+
+	// 주소에 가면 뭐가 있는데?
+	// ex) 결혼식 청접장에 있는 주소 = 예식장 주소
+	// ex) 명함에 있는 주소 = 회사 주소
+	// * = 포인터 (주소 담는 바구니)
+
+	// 타입의 불일치?
+	__int64* ptr2 = (__int64*)&number;
 
 	return 0;
 }
 
-
-void EnterLobby() {
-	while (true) {
-		cout << "------------------" << endl;
-		cout << " 로비             " << endl;
-		cout << "------------------" << endl;
-
-		// 플레이어 직업 선택
-		SelectPlayer();
-
-
-		cout << "---------------------------" << endl;
-		cout << "(1) 필드 입장 (2) 게임 종료 " << endl;
-		cout << "---------------------------" << endl;
-
-		int input;
-		cin >> input;
-
-		if (input == 1) {
-			EnterField();
-		}
-		else {
-			return;
-		}
-	}
-}
-
-void SelectPlayer() {
-	while (true) {
-		cout << "------------------" << endl;
-		cout << " 직업 픽!         " << endl;
-		cout << "(1)기사 (2)궁수 (3)법사 " << endl;
-		cout << ">" << endl;
-
-		cin >> playerType;
-
-		if (playerType == PT_Knight) {
-			cout << "기사 생성중" << endl;
-			hp = 150;
-			attack = 10;
-			defence = 5;
-			return;
-		}
-		else if (playerType == PT_Archer) {
-			cout << "궁수 생성중" << endl;
-			hp = 100;
-			attack = 15;
-			defence = 3;
-			break;
-		}
-		else if (playerType == PT_Mage) {
-			cout << "법사 생성중" << endl;
-			hp = 80;
-			attack = 25;
-			defence = 0;
-			break;
-		}
-	}
-}
-
-void EnterField() {
-	while (true) {
-		cout << "------------------" << endl;
-		cout << " 필드             " << endl;
-		cout << "------------------" << endl;
-
-		cout << "[PLAYER] HP : " << hp << " / ATT : " << attack << " / DEF : " << defence << endl;
-
-		CreateRandomMonster();
-
-		cout << "------------------" << endl;
-		cout << "(1) 전투  (2)도주 " << endl;
-		cout << "------------------" << endl;
-
-		int input;
-		cin >> input;
-
-		if (input == 1) {
-			EnterField();
-			if (hp == 0)
-				return; 
-		}
-		else {
-			return;
-		}
-	}
-}
-
-void CreateRandomMonster() {
-
-	monsterType = rand() % 3;
-
-	switch (monsterType) {
-	case MT_Slime:
-		cout << "슬라임 생성중... (HP : 15 / ATT : 5 / DEF : 0)" << endl;
-		monsterHp = 15;
-		monsterAttack = 5;
-		monsterDefence = 0;
-		break;
-	case MT_Orc:
-		cout << "오크 생성중... (HP : 40 / ATT : 10 / DEF : 3)" << endl;
-		monsterHp = 40;
-		monsterAttack = 10;
-		monsterDefence = 3;
-		break;
-	case MT_Skeleton:
-		cout << "스켈레톤 생성중... (HP : 80 / ATT : 15 / DEF : 5)" << endl;
-		monsterHp = 80;
-		monsterAttack = 15;
-		monsterDefence = 5;
-		break;
-	}
-}
-
-void EnterBattle() {
-	while (true) {
-		int damage = attack - monsterDefence;
-		if (damage < 0)
-			damage = 0;
-
-		// 선빵
-		monsterHp -= damage;
-		if (monsterHp < 0)
-			monsterHp = 0;
-
-		cout << "몬스터 남은 체력 : " << monsterHp << endl;
-
-		if (monsterHp == 0) {
-			cout << "몬스터를 처치했습니다!" << endl;
-			return;
-		}
-
-		damage = monsterAttack - defence;
-		if (damage < 0)
-			damage = 0;
-
-		hp -= damage;
-		if (hp < 0)
-			hp = 0;
-
-		cout << "플레이어 남은 체력 : " << hp << endl;
-		if (hp == 0) {
-			cout << "당신은 사망했습니다.. 게임 끝" << endl;
-			return;
-		}
-
-	}
-}
