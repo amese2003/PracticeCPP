@@ -2,50 +2,43 @@
 
 using namespace std;
 
-// 오늘의 주제 : 배열
+// 오늘의 주제 : 포인터 vs 배열
 
-struct StatInfo {
-	int hp;
-	int attack;
-	int defence;
-};
+void Test(int* a) {
+	*a += 1;
+	cout << *a << endl;
+}
+
+// 배열은 함수 인자로 넘기면, 컴파일러가 알아서 포인터로 치환한다 (char[] -> char *)
+// 즉 배열 내용을 넘긴게 아니라, 시작 주소를 넘긴다
+void Test(char a[]) {
+	a[0] = 'x';
+}
 
 
 int main() {	
 
-	const int monsterCount = 10;
-	StatInfo monsters[monsterCount];
+	// .data 주소 [H][e][l][l][o][][W][o][r][l][d][\n];
+	// test1[ 주소 ] << 8바이트
+	const char* test1 = "Hello World";
 
-	auto WhoAmI = monsters;
+	// .data 주소 [H][e][l][l][o][][W][o][r][l][d][\n];
+	// [H][e][l][l] [o][][W][o] [r][l][d][\n];
+	char test2[] = "Hello World";
+	test2[0] = 'R';
 
-	StatInfo* monster_0 = monsters;
-	monster_0->hp = 100;
-	monster_0->attack = 10;
-	monster_0->defence = 1;
+	// 포인터는 [주소를 담는 바구니]
+	// 배열은 [닭장] 즉, 그 자체로 같은 데이터끼리 붙어있는 '바구니' 모음
+	// - 다만 [배열 이름]은 '바구니 모음'의 [시작주소]
 
-	// 포인터 덧셈은 타입만큼의 주소 이동
-	StatInfo* monster_1 = monsters + 1;
-	monster_1->hp = 200;
-	monster_1->attack = 20;
-	monster_1->defence = 2;
+	// 배열을 함수의 인자로 넘기게 되면?
+	int a = 0;
+	Test(&a);
+	Test(test2);
 
-	StatInfo& monster_2 = *(monsters + 2);
-	monster_2.hp = 300;
-	monster_2.attack = 30;
-	monster_2.defence = 3;
+	cout << test1 << endl;
 
-	// [주의] 이건 완전히 다른 의미다!
-	StatInfo temp = *(monsters + 2);
-	temp.hp = 300;
-	temp.attack = 30;
-	temp.defence = 3;
-
-	for (int i = 0; i < 10; i++) {
-		StatInfo& monster = monsters[i]; // = *(monsters + i)
-		monster.attack = 100 * (i + 1);
-		monster.hp = 10 * (i + 1);
-		monster.defence = (i + 1);
-	}
+	cout << test2 << endl;
 	
 	return 0;
 }
