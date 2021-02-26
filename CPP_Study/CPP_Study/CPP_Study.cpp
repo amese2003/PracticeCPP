@@ -2,44 +2,52 @@
 
 using namespace std;
 
-// 오늘의 주제 : 다중 포인터
-
-void SetMessage(const char* a) {
-	a = "bye";
-}
-
-void SetMessage(const char** a) {
-	*a = "Bye";
-}
-
-
-void SetMessage2(const char*& a) {
-	a = "Wow";
-}
+// 오늘의 주제 : 이차원 배열
 
 int main() {	
 
-	int a = 0;
+	int a[10] = { 1,2,3 };
 
-	const char* msg = "Hello";
-	SetMessage(msg);
+	// [4] [2] [3] [4] [1] << 0
+	// [1] [1] [5] [2] [2] << 1
 
-	//cout << msg << endl; // Hello? bye?
+	int first[5] = { 4,2,3,4,1 };
+	int secound[5] = { 1,1,5,2,2 };
 
-	// 주소2 [] << 1바이트 바구니
-	// 주소1 [ 주소2  ] << 8바이트
-	// pptr[ 주소1 ] << 8바이트
-	const char** pptr = &msg;
+	int apartment2D[2][5] = { { 4,2,3,4,1 }, { 1,1,5,2,2 } };
 
+	for (int floor = 0; floor < 2; floor++) {
+		for (int room = 0; room < 5; room++) {
 
-	// [매개변수][ret][지역변수(msg(Hello 주소))][매개변수(a(&msg))][ret][지역변수]
-	SetMessage(&msg);
-	cout << msg << endl;
+			int num = apartment2D[floor][room];
+			cout << num << "";
+		}
 
-	// 다중 포인터 : 혼동스럽다?
-	// 그냥 양파까기라고 생각하면 된다.
-	SetMessage2(msg);
-	cout << msg << endl;
+		cout << endl;
+	}
+
+	int apartment1D[10] = { 4,2,3,4,1, 1,1,5,2,2 };
+
+	for (int floor = 0; floor < 2; floor++) {
+		for (int room = 0; room < 5; room++) {
+
+			int index = (floor * 5) + room;
+			// apartment1d + (floor * 20) + 4  * room;
+			int num = apartment1D[index];
+			cout << num << "";
+		}
+
+		cout << endl;
+	}
+
+	// 2차 배열은 언제 사용할까? 대표적으로 2d 로그라이크
+	int map[5][5] = {
+		{1,1,1,1,1},
+		{1,0,0,1,1},
+		{0,0,0,0,1},
+		{1,0,0,0,0},
+		{1,1,1,1,1}
+	};
 
 	return 0;
 }
