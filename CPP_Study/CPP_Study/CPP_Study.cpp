@@ -1,112 +1,88 @@
 ﻿#include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 // 오늘의 주제 : 연습문제
 
-int StrLen(const char* str) {
-	int count = 0;
+const int MAX = 100;
+int board[MAX][MAX] = {};
+int N;
 
-	while (str[count] != '\0') 
-		count++;	
+enum Dir {
+	RIGHT = 0,
+	DOWN = 1,
+	LEFT = 2,
+	UP = 3	
+};
 
-	return count;
-}
+void PrintBoard() {
 
-void StrCpy(const char* str1, char* str2) {
+	for (int y = 0; y < N; y++) {
+		for (int x = 0; x < N; x++) {
+			cout << setfill('0') << setw(2) << board[y][x] << " ";
+		}
 
-	int count = StrLen(str1);
-
-	for (int i = 0; i <= count; i++) {
-		str2[i] = str1[i];
+		cout << endl;
 	}
 }
 
-char* StrCat(char* dest, char* src) {
 
-	/*int destCount = StrLen(dest);
-	int srcCount = StrLen(src);
+bool CanGo(int y, int x) {
 
-	char* pos = dest + destCount;
+	if (y < 0 || y >= N)
+		return false;
 
-	for (int i = 0; i <=  srcCount; i++) {
-		*(pos + i) = src[i];
-	}*/
+	if (x < 0 || x >= N)
+		return false;
 
-	char* ret = dest;
+	if (board[y][x] != 0)
+		return false;
 
-	while (*dest != '\0')
-		dest++;
-
-	while (*src) 
-		*dest++ = *src++;
-	
-	*dest = '\0';
-
-	return dest;
+	return true;
 }
 
-int StrCmp(char* dest, char* src) {
 
-	int destCount = StrLen(dest);
 
-	for (int i = 0; i < destCount; i++) {
-		if (dest[i] < src[i])
-			return -1;
-		else
-			return 1;
+void SetBoard() {
+	int dir = RIGHT;
+	int count = 1;
+	int y = 0;
+	int x = 0;
+
+
+	int dy[] = { 0, 1, 0, -1 };
+	int dx[] = { 1, 0, -1, 0 };
+
+	while(true) {		
+
+		board[y][x] = count;
+
+		if (count == N * N)
+			break;
+
+		int nextY = y + dy[dir];
+		int nextX = x + dx[dir];
+
+
+		if (CanGo(nextY, nextX)) {
+			y = nextY;
+			x = nextX;
+			count++;
+		}
+		else {
+			dir = (dir + 1) % 4;
+		}
 	}
-
-	return 0;
 }
 
-void ReverseStr(char* src) {
-
-	char temp = 0;
-
-
-	int total = StrLen(src);
-
-	for (int i = 0; i < total / 2; i++) {
-
-		temp = src[i];
-		src[i] = src[total - i - 1];
-		src[total - i - 1] = temp;
-	}
-
-
-
-	// asdfg
-	// asdf
-
-
-}
 
 int main() 
 {	
-	const int BUF_SIZE = 100;
+	cin >> N;
 
-	char a[BUF_SIZE] = "Hello";
-	char b[BUF_SIZE];
+	SetBoard();
+	PrintBoard();
 
-	int leng = StrLen(a);
-	cout << leng << endl;
-
-	StrCpy(a, b);
-	cout << b << endl;
-
-
-	StrCat(b, a);
-	cout << a << endl;
-
-	char c[BUF_SIZE] = "Hellq";
-
-	int cmp = StrCmp(a, c);
-
-	cout << cmp << endl;
-	
-	ReverseStr(c);
-	cout << c << endl;
 
 	return 0;
 }
