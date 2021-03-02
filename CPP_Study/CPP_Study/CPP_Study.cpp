@@ -10,104 +10,55 @@ using namespace std;
 // - 은닉성
 // - 다형성
 
-// 은닉성 (Data Hiding) = 캡슐화 (Encapsulation)
-// 몰라도 되는건 깔끔하게 숨기겠다!
-// 숨기는 이유?
-// 1) 정말 위험하고 건드리면 안되는 경우
-// 2) 다른 경로로 접근하길 원하는 경우
+// 다형성 (Polymorphism = Poly + morph) = 겉은 똑같은데, 기능이 다르게 동작한다.
+// - 오버로딩 (Overloading) = 함수 중복 정의 = 함수 이름 재사용
+// - 오버라이딩(Overriding) = 재정의 = 부모 클래스의 함수를 자식 클래스에서 재정의
 
-// 자동차
-// - 핸들
-// - 패달
-// - 엔진
-// - 문
-// - 각종 전기선
+// 바인딩(Binding) = 묶는다
+// - 정적 바인딩(Static Binding) : 컴파일 시점에 결정
+// - 동적 바인딩 (Dynamic Binding) : 실행시점에 결정
 
-// 일반 구매자 입장에서 사용하는 것?
-// - 핸들 / 페달 / 문
-// 몰라도 됨 (오히려 건드리면 큰일남)
-// - 엔진, 각종 전기선
+// 일반 함수는 정적 바인딩을 기본으로 사용
+// 동적 바인딩 원한다면? -> 가상 함수 (virtual fuction)
 
-// public
-// protected
-// private
-
-// 상속 접근 지정자 : 다음 세대한테 부모님의 유산을 어떻게 물려줄지?
-// 부모님한테 물려받은 유산을 꼭 나의 자손들한테도 똑같이 물려줘야 하진 않음
-// - public : 공개적 상속? -> 부모님의 유산 설계 그대로. (public -> public, protected -> protected)
-// - protected : 보호받은 상속? -> 내 자손들한테만 물려줄꺼야. (public -> protected, protected -> protected);
-// - private : 개인주의 상속? -> 나까지만 잘 쓰고 자손들한테는 아예 안줄꺼임. (public -> private, protected -> private)
-
-class Car {
-public: // (멤버 지정자) 접근 지정자
-
-	void MoveHandle() {}
-	void PushPedal() {}
-	void OpenDoor() {}
-
-	void TurnKey() {
-		RunEngine();
-	}
-
-protected:
-	void DisassembleCar() {} // 차를 분해한다
-	void RunEngine() {} // 엔진을 구동시킨다
-	void ConnectCircuit() {} // 전기선 연결
-
-
+class Player {
 public:
+	void Move() { cout << "Move Player !" << endl; }
+
+	virtual void VMove() { cout << "Move Player !" << endl; }
+public:
+	int _hp;
 };
 
-class SuperCar : private Car // 상속 접근 지정자
-{
+class Knight : public Player {
 public:
-	void PushRemoteController() {
-		RunEngine();
-	}
+	void Move() { cout << "Move Knight !" << endl; }
+
+	// 가상 함수는 재정의를 해도 가상 함수
+	void VMove() { cout << "Move Knight !" << endl; }
+public:
+	int _stamina;
 };
 
-class TestSuperCar : SuperCar
-{
+class Mage : public Player {
 public:
-	void Test() {
-	}
-
-private:
-
+	int _mp;
 };
 
-// '캡슐화'
-// 연관된 데이터와 함수를 논리적으로 묶어놓은 것
-class Berserker {
-public:
-
-	int GetHp() { return _hp; }
-	// 사양 : 체력 50 이하 버서커 모드
-	void SetHp(int hp) {
-		_hp = hp;
-		if (_hp <= 50)
-			SetBerserkerMode();
-	}
-
-
-private:
-	void SetBerserkerMode() {
-		cout << "매우 강해짐!" << endl;
-	}
-private:
-	int _hp = 100;
-};
+void MovePlayer(Player* player) {
+	(*player).VMove();
+}
 
 int main() 
 {	
-	Berserker b;
-	b.SetHp(20);
-
+	Player p;
+	//MovePlayer(&p); // 플레이어는 플레이어다? Yes
+	//MoveKnight(&p); // 플레이어는 기사다? no
 	
-	
 
-	// 공개된 곳에서 이걸?
-	//car.DisassembleCar();
+	Knight k;
+	MovePlayer(&k);
+
 
 	return 0;
 }
