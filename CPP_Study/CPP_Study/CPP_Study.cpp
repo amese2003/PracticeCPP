@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-// 오늘의 주제 : 상속성
+// 오늘의 주제 : 은닉성
 
 // 객체 지향 (OOP Object Oriented Programming)
 
@@ -10,116 +10,104 @@ using namespace std;
 // - 은닉성
 // - 다형성
 
+// 은닉성 (Data Hiding) = 캡슐화 (Encapsulation)
+// 몰라도 되는건 깔끔하게 숨기겠다!
+// 숨기는 이유?
+// 1) 정말 위험하고 건드리면 안되는 경우
+// 2) 다른 경로로 접근하길 원하는 경우
 
+// 자동차
+// - 핸들
+// - 패달
+// - 엔진
+// - 문
+// - 각종 전기선
 
-// 메모리
-// [ [Player] ]
-// [ Knight   ]
+// 일반 구매자 입장에서 사용하는 것?
+// - 핸들 / 페달 / 문
+// 몰라도 됨 (오히려 건드리면 큰일남)
+// - 엔진, 각종 전기선
 
+// public
+// protected
+// private
 
-// 생성자(N) / 소멸자(1)
+// 상속 접근 지정자 : 다음 세대한테 부모님의 유산을 어떻게 물려줄지?
+// 부모님한테 물려받은 유산을 꼭 나의 자손들한테도 똑같이 물려줘야 하진 않음
+// - public : 공개적 상속? -> 부모님의 유산 설계 그대로. (public -> public, protected -> protected)
+// - protected : 보호받은 상속? -> 내 자손들한테만 물려줄꺼야. (public -> protected, protected -> protected);
+// - private : 개인주의 상속? -> 나까지만 잘 쓰고 자손들한테는 아예 안줄꺼임. (public -> private, protected -> private)
 
-// 생성자는 탄생을 기념해서 호출하는 함수?
-// - Knight를 생성하면 -> Player의 생성자? Knight의 생성자?
-// -> 솔로몬의 선택! 그냥 둘 다 호출하자!
+class Car {
+public: // (멤버 지정자) 접근 지정자
 
+	void MoveHandle() {}
+	void PushPedal() {}
+	void OpenDoor() {}
 
-// GameObject
-// - Creature
-// -- Player, Monster, Npc, Pet
-// - Projectiile
-// -- Arow, Fire
-// - Env
-
-// Item
-// - Weapon
-// -- Sword, Bow
-// - Aromr
-// -- Helmet, Boots, Armor
-// - Consumable
-// -- Potion, scroll
-
-class GameObject {
-public:
-	int _objectId;
-};
-
-class Player {
-public:
-	Player() {
-		_hp = 0;
-		_attack = 0;
-		_defence = 0;
-		cout << "Player() 생성자 호출" << endl;
+	void TurnKey() {
+		RunEngine();
 	}
 
-	Player(int hp) {
+protected:
+	void DisassembleCar() {} // 차를 분해한다
+	void RunEngine() {} // 엔진을 구동시킨다
+	void ConnectCircuit() {} // 전기선 연결
+
+
+public:
+};
+
+class SuperCar : private Car // 상속 접근 지정자
+{
+public:
+	void PushRemoteController() {
+		RunEngine();
+	}
+};
+
+class TestSuperCar : SuperCar
+{
+public:
+	void Test() {
+	}
+
+private:
+
+};
+
+// '캡슐화'
+// 연관된 데이터와 함수를 논리적으로 묶어놓은 것
+class Berserker {
+public:
+
+	int GetHp() { return _hp; }
+	// 사양 : 체력 50 이하 버서커 모드
+	void SetHp(int hp) {
 		_hp = hp;
-		_attack = 0;
-		_defence = 0;
-		cout << "Player(int hp) 생성자 호출" << endl;
-	}
-
-	~Player() {
-		cout << "~Player() 소멸자 호출" << endl;
+		if (_hp <= 50)
+			SetBerserkerMode();
 	}
 
 
-	void Move() { cout << "Player Move 호출" << endl; }
-	void Attack() { cout << "Player Attack 호출" << endl; }
-	void Die() { cout << "Player Die 호출" << endl; }
-
-public:
-	int _hp;
-	int _attack;
-	int _defence;
-};
-
-class Knight : Player {
-public:
-	void Move() { cout << "Player Move 호출" << endl; }
-
-	Knight() 
-	/*
-		hidden Movement
-		선처리 영역
-		- 여기서 Player() 생성자 호출
-	*/	
-	{
-		_stamina = 10;
-		cout << "Knight() 생성자 호출" << endl;
+private:
+	void SetBerserkerMode() {
+		cout << "매우 강해짐!" << endl;
 	}
-
-	Knight(int stamina) : Player(100)
-		/*
-			hidden Movement
-			선처리 영역
-			- 여기서 Player() 생성자 호출
-		*/
-	{
-		_stamina = stamina;
-		cout << "Knight(int stamina) 생성자 호출" << endl;
-	}
-
-	~Knight() {
-		cout << "~Knight() 소멸자 호출" << endl;
-	}
-	/*
-		후처리 영역
-		- 여기서 ~Player() 소멸자 호출
-	*/
-
-public:
-	int _stamina;
-};
-
-class Mage : Player {
-public:
+private:
+	int _hp = 100;
 };
 
 int main() 
 {	
-	Knight k(100);
+	Berserker b;
+	b.SetHp(20);
+
+	
+	
+
+	// 공개된 곳에서 이걸?
+	//car.DisassembleCar();
 
 	return 0;
 }
