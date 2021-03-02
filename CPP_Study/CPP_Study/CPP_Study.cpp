@@ -39,9 +39,21 @@ public:
 		_posY = knight._posY;
 	}
 
+	Knight(int hp, int attack, int posX, int posY) {
+		_hp = hp;
+		_attack = attack;
+		_posY = posY;
+		_posX = posX;
+	}
+
 
 	// [3] 기타 생성자
-	Knight(int hp) {
+
+	// 이 중에서 인자를 1개만 받는 [기타 생성자]를 
+	// [타입 변환 생성자] 라고 부르기도 함.
+
+	// 명시적인 용도로만 사용할 것!
+	 explicit Knight(int hp) {
 		_hp = hp;
 		_attack = 10;
 		_posY = 0;
@@ -83,18 +95,39 @@ void Knight::Attack() {
 	cout << "Attack" << endl;
 }
 
+void HelloKnight(Knight k) {
+	cout << "Hello Knight" << endl;
+}
+
 int main() 
 {	
-	Knight k1(100);
+	Knight k1(100, 10, 0, 0);
 	k1._attack = 10;
 	k1._posY = 0;
 	k1._posX = 0;
 
-	Knight k2(k1);
+	Knight k2(k1); // 복사 생성자
+
+	Knight k3 = k1; // 복사 생성자
+
+	Knight k4; // 생성자
+	k4 = k1; // 복사
 
 	k1.Move(2, 2);
 	k1.Attack();
 	k1.Die();
+
+	// 암시적 형변환 -> 컴파일러가 알아서 바꿔치기
+	int num = 1;
+
+
+	float f = (float)num; // 명시작 < 우리가 코드로 num을 float 바구니에 넣으라고 함.
+	double d = num; // 암시작 << 별말 안했는데 컴파일러가 알아서 넣음.
+
+	Knight k5;
+	k5 = (Knight)1;
+
+	HelloKnight((Knight)5);
 
 	return 0;
 }
