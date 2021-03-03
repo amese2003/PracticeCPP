@@ -2,136 +2,86 @@
 #include <iomanip>
 using namespace std;
 
-// 오늘의 주제 : 연산자 오버로딩
+// 오늘의 주제 : 객체지향 마무리
 
-// 연산자 vs 함수
-// - 연산자는 피연산자의 개수/타입이 고정되어 있음
+// 1) struct vs class
 
-// 연산자 오버로딩?
-// 일단 [연산자 함수]를 정의해야 함
-// 함수도 멤버함수 vs 전역함수가 존재하는것처럼, 연산자 함수도 두가지 방식으로 만들 수 있음
+// c++ 에서는 struct나 class 종이 한장차이다.
+// struct는 기본 접근 지정자가 public, class는 private
+// 왜 이렇게 했을까? c++은 c언어에서 파생되어 발전, 어느정도 호환성 때문에..
+// -> struct는 구조체 (데이터 묶음)을 표현하는 용도
+// -> class는 객체 지향 프로그래밍의 특징을 나타내는 용도
 
-// - 멤버 연산자 함수 version
-// -- a op b 형태에서 왼쪽으로 기준으로 실행됨 (a가 클래스여야 가능 a를 '기준 피연산자'라고 함)
-// -- 한계) a가 클래스가 아니면 사용 못함
-
-// - 전역 연산자 함수 version
-// -- a op b 형태라면 a, b 모두를 연산자 함수의 피연산자로 만든다.
-
-// 그럼 무엇이 더 좋은가? 그런거 없다. 심지어 둘 중 하나만 지원하는 경우도 있음
-// - 대표적으로 대입 연산자 (a = b)는 전역 연산자 version으론 못만듬.
-
-// 복사 대입 연산자
-// - 대입 연산자가 나온 김에 [복사 대입 연산자]에 대해 알아보자
-// 용어가 좀 헷갈린다 [복사 생성자] [대입 연산자] [복사 대입 연산자]
-// - 복사 대입 연산자 = 대입 연산자 중, 자기 자신의 참조 타입을 인자로 갖는것
-
-// 기타
-// - 모든 연산자를 다 오버로딩 할 수 있는 것은 아니다 (::, _, * 이런건 안됨)
-// - 모든 연산자가 다 2개 항이 있는 것은 아님. ++ -- 가 대표적 (단항 연산자)
-// - 증감 연산자 ++ --
-
-// -- 전위형(++a) operator++()
-// -- 후위형 (a++_) operator++(int a)
-
-class Position {
-public:
-	Position() {
-
-	}
-
-	Position(const Position& args) {
-
-	}
-
-	Position operator+(const Position& arg) {
-		Position pos;
-		pos._x = _x + arg._x;
-		pos._y + _y + arg._y;
-		return pos;
-	}
-
-	Position operator+(int arg) {
-		Position pos;
-		pos._x = _x + arg;
-		pos._y + _y + arg;
-		return pos;
-	}
-
-	bool operator==(const Position& arg) {
-		return _x == arg._x && _y == arg._y;
-	}
-
-	Position& operator=(int arg) {
-
-		_x = arg;
-		_y = arg;
-
-		return *this;
-	}
-
-	// [복사 생성자] [복사 대입 연산자] 등 특별 대우를 받는 이유?
-	// 말 그대로 객체가 '복사'되길 원하는 특징 때
-	Position& operator=(const Position& arg) {
-
-		_x = arg._x;
-		_y = arg._y;
-
-		return *this;
-	}
-
-	Position operator++() {		
-		_x++;
-		_y++;		
-	}
-
-	Position operator++(int) {
-		Position ret = *this;
-		_x++;
-		_y++;
-		return ret;
-	}
-
-public:
-	int _x;
-	int _y;
-
+struct TestStruct {
+	int _a;
+	int _b;
 };
 
-Position operator+(int a, const Position& b) {
-	Position ret;
+class TestClass {
+private:
+	int _a;
+	int _b;
+};
 
-	ret._x = b._x + a;
-	ret._y = b._y + a;
+// 2) static 변수, static 함수
+class Marine {
+public:
+	// 특정 마린 객체에 종속적
+	int _hp;
 
-	return ret;
+	void TakeDamage(int damage) {
+		_hp -= damage;
+	}
+
+	static void SetAttack() {
+		s_attack = 100;
+	}
+
+
+	// 특정 마린 객체와 무관
+	// 마린이라는 '클래스' 자체와 연관
+	static int s_attack; // 설계도상으로만 존재
+};
+
+// static 변수는 어떤 메모리?
+// 초기화 하면 .data
+// 안하면 .bss
+int Marine::s_attack = 0;
+
+class Player {
+public:
+	int _id;
+};
+
+int GenerateId() {
+
+	// 생명주기: 프로그램 시작/종료 (메모리에 항상 올라가 있음)
+	// 가시범위: 
+
+	// 정적 지역 객체
+	static int s_id = 1;
+
+	return s_id++;
 }
+
+
 int main() 
 {	
-	int a = 1;
-	int b = 2;
-	int c = a + 3.0f;
+	Marine m1;
+	m1._hp = 45;
 
-	Position pos;
-	pos._x = 0;
-	pos._y = 0;
+	Marine::s_attack = 6;
+	Marine::SetAttack();
+	//m1.s_attack = 6;
 
-	Position pos2;
-	pos2._x = 1;
-	pos2._y = 1;
+	
 
-	Position pos3 = pos + pos2;
+	Marine m2;
+	m1._hp = 45;
 
-	Position pos4 = pos3 + 1;
-
-	Position pos5;
-	pos3 = (pos = 5);
-
-	// (Pos&) 줘! (Pos)복사값 줄게.
-	Position temp = pos3++;
-
-	pos5 = temp;
-	pos3.operator++(1);
+	// 스택 아님. .data 영역
+	static int id = 10;
+	int a = id;
 
 	return 0;
 }
