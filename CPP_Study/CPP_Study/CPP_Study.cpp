@@ -2,63 +2,136 @@
 #include <iomanip>
 using namespace std;
 
-// 오늘의 주제 : 은닉성
+// 오늘의 주제 : 연산자 오버로딩
 
-// 객체 지향 (OOP Object Oriented Programming)
+// 연산자 vs 함수
+// - 연산자는 피연산자의 개수/타입이 고정되어 있음
 
-// - 상속성
-// - 은닉성
-// - 다형성
+// 연산자 오버로딩?
+// 일단 [연산자 함수]를 정의해야 함
+// 함수도 멤버함수 vs 전역함수가 존재하는것처럼, 연산자 함수도 두가지 방식으로 만들 수 있음
 
-// 다형성 (Polymorphism = Poly + morph) = 겉은 똑같은데, 기능이 다르게 동작한다.
-// - 오버로딩 (Overloading) = 함수 중복 정의 = 함수 이름 재사용
-// - 오버라이딩(Overriding) = 재정의 = 부모 클래스의 함수를 자식 클래스에서 재정의
+// - 멤버 연산자 함수 version
+// -- a op b 형태에서 왼쪽으로 기준으로 실행됨 (a가 클래스여야 가능 a를 '기준 피연산자'라고 함)
+// -- 한계) a가 클래스가 아니면 사용 못함
 
-// 바인딩(Binding) = 묶는다
-// - 정적 바인딩(Static Binding) : 컴파일 시점에 결정
-// - 동적 바인딩 (Dynamic Binding) : 실행시점에 결정
+// - 전역 연산자 함수 version
+// -- a op b 형태라면 a, b 모두를 연산자 함수의 피연산자로 만든다.
 
-// 일반 함수는 정적 바인딩을 기본으로 사용
-// 동적 바인딩 원한다면? -> 가상 함수 (virtual fuction)
+// 그럼 무엇이 더 좋은가? 그런거 없다. 심지어 둘 중 하나만 지원하는 경우도 있음
+// - 대표적으로 대입 연산자 (a = b)는 전역 연산자 version으론 못만듬.
 
-class Player {
+// 복사 대입 연산자
+// - 대입 연산자가 나온 김에 [복사 대입 연산자]에 대해 알아보자
+// 용어가 좀 헷갈린다 [복사 생성자] [대입 연산자] [복사 대입 연산자]
+// - 복사 대입 연산자 = 대입 연산자 중, 자기 자신의 참조 타입을 인자로 갖는것
+
+// 기타
+// - 모든 연산자를 다 오버로딩 할 수 있는 것은 아니다 (::, _, * 이런건 안됨)
+// - 모든 연산자가 다 2개 항이 있는 것은 아님. ++ -- 가 대표적 (단항 연산자)
+// - 증감 연산자 ++ --
+
+// -- 전위형(++a) operator++()
+// -- 후위형 (a++_) operator++(int a)
+
+class Position {
 public:
-	void Move() { cout << "Move Player !" << endl; }
+	Position() {
 
-	virtual void VMove() { cout << "Move Player !" << endl; }
+	}
+
+	Position(const Position& args) {
+
+	}
+
+	Position operator+(const Position& arg) {
+		Position pos;
+		pos._x = _x + arg._x;
+		pos._y + _y + arg._y;
+		return pos;
+	}
+
+	Position operator+(int arg) {
+		Position pos;
+		pos._x = _x + arg;
+		pos._y + _y + arg;
+		return pos;
+	}
+
+	bool operator==(const Position& arg) {
+		return _x == arg._x && _y == arg._y;
+	}
+
+	Position& operator=(int arg) {
+
+		_x = arg;
+		_y = arg;
+
+		return *this;
+	}
+
+	// [복사 생성자] [복사 대입 연산자] 등 특별 대우를 받는 이유?
+	// 말 그대로 객체가 '복사'되길 원하는 특징 때
+	Position& operator=(const Position& arg) {
+
+		_x = arg._x;
+		_y = arg._y;
+
+		return *this;
+	}
+
+	Position operator++() {		
+		_x++;
+		_y++;		
+	}
+
+	Position operator++(int) {
+		Position ret = *this;
+		_x++;
+		_y++;
+		return ret;
+	}
+
 public:
-	int _hp;
+	int _x;
+	int _y;
+
 };
 
-class Knight : public Player {
-public:
-	void Move() { cout << "Move Knight !" << endl; }
+Position operator+(int a, const Position& b) {
+	Position ret;
 
-	// 가상 함수는 재정의를 해도 가상 함수
-	void VMove() { cout << "Move Knight !" << endl; }
-public:
-	int _stamina;
-};
+	ret._x = b._x + a;
+	ret._y = b._y + a;
 
-class Mage : public Player {
-public:
-	int _mp;
-};
-
-void MovePlayer(Player* player) {
-	(*player).VMove();
+	return ret;
 }
-
 int main() 
 {	
-	Player p;
-	//MovePlayer(&p); // 플레이어는 플레이어다? Yes
-	//MoveKnight(&p); // 플레이어는 기사다? no
-	
+	int a = 1;
+	int b = 2;
+	int c = a + 3.0f;
 
-	Knight k;
-	MovePlayer(&k);
+	Position pos;
+	pos._x = 0;
+	pos._y = 0;
 
+	Position pos2;
+	pos2._x = 1;
+	pos2._y = 1;
+
+	Position pos3 = pos + pos2;
+
+	Position pos4 = pos3 + 1;
+
+	Position pos5;
+	pos3 = (pos = 5);
+
+	// (Pos&) 줘! (Pos)복사값 줄게.
+	Position temp = pos3++;
+
+	pos5 = temp;
+	pos3.operator++(1);
 
 	return 0;
 }
