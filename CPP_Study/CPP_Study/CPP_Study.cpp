@@ -13,13 +13,27 @@ public:
 
 class Dog {
 public:
+
+	Dog() {
+
+	}
 	// 타입 변환 생성자
 	Dog(const Knight& knight) {
 		_age = knight._hp;
 	}
+
+	// 타입 변환 연산자
+	operator Knight() {
+		return (Knight)(*this);
+	}
 public:
 	int _age = 1;
 	int _cuteness = 2;
+};
+
+class BullDog : public Dog {
+public:
+	bool _french;
 };
 
 int main() 
@@ -95,6 +109,39 @@ int main()
 	{
 		Knight knight;
 		Dog dog = (Dog)knight;
+
+		Knight knight2 = dog;
+	}
+
+	// [2] 연관없는 클래스 사이의 참조 타입 변환
+	// 특징) 명시적으로는 가능
+	{
+		Knight knight;
+
+		// [주소] -> [dog]
+		Dog& dog = (Dog&)knight;
+	}
+
+	// ---------------- 상속관계에 있는 클래스 사이의 변환 ----------------
+
+	// [1] 상속 관계 클래스의 값 타입 벼놘
+	{	
+
+		//Dog dog;
+		//BullDog bulldog = dog;
+
+		BullDog bulldog;
+		Dog dog = bulldog;
+	}
+
+	// [2] 상속 관계 클래스의 참조 타입 변환
+	{
+		//Dog dog;
+		//BullDog& bulldog = (BullDog&)dog;
+
+		// [age cutness french]
+		BullDog bulldog;
+		Dog& dog = bulldog;
 	}
 
 	return 0;
