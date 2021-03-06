@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TempBridge", "TempBridge\Te
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OutWallCheck", "OutWallCheck\OutWallCheck.vcxproj", "{8344C792-81F7-425F-B313-8C35B9ECA64F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NightWork", "NightWork\NightWork.vcxproj", "{23D68327-8FD3-4E5D-916C-950BDD1123A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{8344C792-81F7-425F-B313-8C35B9ECA64F}.Release|x64.Build.0 = Release|x64
 		{8344C792-81F7-425F-B313-8C35B9ECA64F}.Release|x86.ActiveCfg = Release|Win32
 		{8344C792-81F7-425F-B313-8C35B9ECA64F}.Release|x86.Build.0 = Release|Win32
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Debug|x64.ActiveCfg = Debug|x64
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Debug|x64.Build.0 = Debug|x64
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Debug|x86.ActiveCfg = Debug|Win32
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Debug|x86.Build.0 = Debug|Win32
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Release|x64.ActiveCfg = Release|x64
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Release|x64.Build.0 = Release|x64
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Release|x86.ActiveCfg = Release|Win32
+		{23D68327-8FD3-4E5D-916C-950BDD1123A4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
