@@ -1,23 +1,18 @@
 ﻿#include <iostream>
-#include <iomanip>
-#include "Game.h"
 using namespace std;
 
-// 오늘의 주제 : TextRPG #4
+#include "Player.h"
+
+// 오늘의 주제 : 전방선언
 
 
 
 int main() 
 {	
-	srand((unsigned int)time(nullptr));
+	//Player는 몇바이트?
+	Player p1; // stack
 
-	Game game;
-	game.Init();
-
-	while (true) {
-		game.Update();
-
-	}
+	Player* p2 = new Player(); // heap
 
 	return 0;
 }

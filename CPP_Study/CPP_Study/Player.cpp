@@ -1,10 +1,7 @@
-#include <iostream>
 #include "Player.h"
+#include "Monster.h"
 
-using namespace std;
 
-void Player::PrintInfo() {
-	cout << "------------------------------------------" << endl;
-	cout << "[플레이어 정보]" << "HP: " << _hp << " ATT: " << _attack << " DEF: " << _defence << endl;
-	cout << "------------------------------------------" << endl;
+void Player::KillMonster() {
+	_target2->_hp = 0;
 }
