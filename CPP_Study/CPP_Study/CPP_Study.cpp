@@ -1,79 +1,95 @@
 ﻿#include <iostream>
 using namespace std;
 
-// 오늘의 주제 : 함수 포인터
+// 오늘의 주제 : 함수 객체
 
-int Add(int a, int b) {
-	return a + b;
+void HelloWorld() {
+
 }
 
-int Sub(int a, int b) {
-	return a - b;
+void HelloNumber(int number) {
+
 }
 
-class Item {
+class Knight {
 public:
-	Item() : _itemId(0), _rarity(0), _ownerId(0) {
-
+	void AddHp(int addHp) {
+		_hp += addHp;
 	}
 
-public:
-	int _itemId; // 아이템을 구분하기 위한 ID
-	int _rarity; // 희귀도
-	int _ownerId; // 소지자 ID
+private:
+	int _hp = 100;
 };
 
-typedef bool(ITEM_SELECTOR)(Item* item);
+class Functor {
+public:
+	void operator() () {
+		cout << "Functor Test" << endl;
+		cout << _value << endl;
+	 }
 
-Item* FindItem(Item items[], int itemCount, ITEM_SELECTOR* selector) {
-	for (int i = 0; i < itemCount; i++) {
-		Item* item = &items[i];
+	bool operator() (int num) {
+		cout << "Functor Test" << endl;
+		_value += num;
+		cout << _value << endl;
 
-		if (selector(item))
-			return item;
-
+		return true;
 	}
 
-	return nullptr;
-}
+private:
+	int _value = 0;
+};
 
-bool IsRareItem(Item* item) {
-	return item->_rarity >= 2;
-}
+class MoveTask {
+public:
+	void operator()() {
+		cout << "해당 좌표로 플레이어 이동" << endl;
+	}
 
+public:
+	int _playerId;
+	int _posX;
+	int _posY;
+};
 
 int main() 
 {	
-	int a = 10;
-
-	typedef int DATA;
-
-	DATA* ptr = &a;
-
-	// 함수
-	typedef int(FUNC_TYPE)(int, int);
-
-	// 1) 포인터 *
-	// 2) 변수 이름 fn
-	// 3) 데이터 타입 함수는 (인자는 int, int 반환은 int)
-	FUNC_TYPE* fn;
+	// 함수 객체 : 함수처럼 동작하는 객체
+	// 함수 포인터의 단점
+	// 함수 포인터의 선언
 
 
-	// 함수 포인터
-	fn = Add;
+	void (*pfunc)();
+	
+	pfunc = &HelloWorld;
+	(*pfunc)();
 
-	// 함수의 이름은 함수의 시작 주소 (배열과 유사)
-	int result = fn(1, 2);	// 기본 문법
-	cout << result << endl;
+	// 함수 포인터 단점
+	// 1) 시그니처가 안맞으면 사용 불가!
+	// 2) 상태를 가질 수 없다.
 
-	int result2 = (*fn)(1, 2); // 함수 포인터는 *(접근 연산자) 붙여도 함수 주소! 
-	cout << result2 << endl;
+	//pfunc = &HelloNumber;
 
-	Item items[10] = {};
-	items[3]._rarity = 3;
+	// [함수처럼 동작]하는 객체
+	// ()연산자 오버로딩
 
-	Item* rareItem = FindItem(items, 10, IsRareItem);
+	HelloWorld();
 
+	Functor functor;
+	functor();
+	bool ret = functor(3);
+
+	// MMO에서 함수 객체를 사용하는 예시
+	// 클라 <-> 서버
+	// 서버 : 클라가 보내준 네트워크 패킷을 받아서 처리
+	// ex) 클라 : 나 (5,0) 좌표로 보내줘.
+	MoveTask task;
+	task._playerId = 100;
+	task._posX = 5;
+	task._posY = 0;
+
+	// 나중에 여유 될 때 일감 실행
+	task();
 
 	return 0;
 }
