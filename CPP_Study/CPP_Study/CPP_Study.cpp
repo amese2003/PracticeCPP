@@ -26,7 +26,7 @@ public:
 	void operator() () {
 		cout << "Functor Test" << endl;
 		cout << _value << endl;
-	 }
+	}
 
 	bool operator() (int num) {
 		cout << "Functor Test" << endl;
@@ -52,15 +52,15 @@ public:
 	int _posY;
 };
 
-int main() 
-{	
+int main()
+{
 	// 함수 객체 : 함수처럼 동작하는 객체
 	// 함수 포인터의 단점
 	// 함수 포인터의 선언
 
 
 	void (*pfunc)();
-	
+
 	pfunc = &HelloWorld;
 	(*pfunc)();
 
