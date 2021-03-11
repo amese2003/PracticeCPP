@@ -1,60 +1,73 @@
 ﻿#include <iostream>
 using namespace std;
 
-// 오늘의 주제 : 템플릿 기초
+// 오늘의 주제 : 콜백 (CALLBACK)
 
-// typename T를 붙이면 '조커카드' (어떤 타입도 다 넣을 수 있음)
-// 근데 무조건 TYPENAME을 붙여야 하는 것은 아니다.
-// template<> 안에 들어가는건 [골라줘야 하는 목록]
-
-template<typename T, int SIZE = 10>
-class RandomBox {
+class Item {
 public:
-	T GetRandomData() {
-		int idx = rand() % SIZE;
-		return _data[idx];
-	}
-
 public:
-	T _data[10];
+	int _itemId = 0;
+	int _rarity = 0;
+	int _ownerId = 0;
 };
 
-// 템플릿 특수화
-template<int SIZE>
-class RandomBox<double, SIZE> 
-{
+class FindByOwnerId {
 public:
-	double GetRandomData() {
-		cout << "RandomBox Double" << endl;
-		int idx = rand() % SIZE;
-		return _data[idx];
+	bool operator()(const Item* item) {
+		return item->_ownerId == _ownerId;
+	}
+public:
+	int _ownerId;
+};
+
+class FindByRarity {
+public:
+	bool operator()(const Item* item) {
+		return item->_rarity >= _rarity;
+	}
+public:
+	int _rarity;
+};
+
+template<typename T>
+Item* FindItem(Item items[], int itemCount, T selector) {
+
+	for (int i = 0; i < itemCount; i++) {
+		Item* item = &items[i];
+
+		if (selector(item)) {
+			cout << i << endl;
+			return item;
+
+		}
 	}
 
-public:
-	double _data[SIZE];
-};
+
+	return nullptr;
+}
 
 int main()
 {
-	// 템플릿 : 함수나 클래스를 찍어내는 틀
-	// 1) 함수 템플릿
-	// 2) 클래스 템플릿
-	srand(static_cast<unsigned int>(time(nullptr)));
-	RandomBox<int, 10> rb1;
-	for (int i = 0; i < 10; i++) {
-		rb1._data[i] = i;
-	}
+	// 함수 포인터 + 함수 객체 + 템플릿
 
-	int value1 = rb1.GetRandomData();
-	cout << value1 << endl;
 
-	RandomBox<double, 20> rb2;
-	for (int i = 0; i < 20; i++) {
-		rb2._data[i] = i + 0.5;
-	}
-	double value2 = rb2.GetRandomData();
-	cout << value2 << endl;
-	
+	// EX) MoveTask 실습 등...
+
+	// 어떤 상황이 일어나면 -> 이 기능을 호출해 줘.
+	// ex) UI 스킬 버튼을 누르면 -> 스킬을 쓰는 함수를 호출
+
+	Item items[10];
+	items[3]._ownerId = 100;
+	items[8]._rarity = 2;
+
+	FindByOwnerId functor1;
+	functor1._ownerId = 100;
+
+	FindByRarity functor2;
+	functor2._rarity = 1;
+
+	Item* item1 = FindItem(items, 10, functor1);
+	Item* item2 = FindItem(items, 10, functor2);
 
 	return 0;
 }
