@@ -1,73 +1,67 @@
 ﻿#include <iostream>
+#include <vector>
 using namespace std;
 
-// 오늘의 주제 : 콜백 (CALLBACK)
-
-class Item {
-public:
-public:
-	int _itemId = 0;
-	int _rarity = 0;
-	int _ownerId = 0;
-};
-
-class FindByOwnerId {
-public:
-	bool operator()(const Item* item) {
-		return item->_ownerId == _ownerId;
-	}
-public:
-	int _ownerId;
-};
-
-class FindByRarity {
-public:
-	bool operator()(const Item* item) {
-		return item->_rarity >= _rarity;
-	}
-public:
-	int _rarity;
-};
-
-template<typename T>
-Item* FindItem(Item items[], int itemCount, T selector) {
-
-	for (int i = 0; i < itemCount; i++) {
-		Item* item = &items[i];
-
-		if (selector(item)) {
-			cout << i << endl;
-			return item;
-
-		}
-	}
-
-
-	return nullptr;
-}
+// 오늘의 주제 : vector
 
 int main()
 {
-	// 함수 포인터 + 함수 객체 + 템플릿
+	// STL (Standard Template Library)
+	// 프로그래밍 할 때 필요한 자료구조/알고리즘들을
+	// 템플릿으로 제공하는 라이브러리
+
+	// 컨테이너(Container) : 데이터를 저장하는 객체 (자료구조 Data Structrue)
+
+	// vector (동적 배열)
+	// - vector의 동작 원리 (size/capacity)
+	// - 중간 삽입/삭제
+	// - 처음/끝 삽입/삭제
+	// - 임의 접근
+
+	// 배열
+	const int MAX_SIZE = 10;
+	int arr[MAX_SIZE] = {};
+
+	for (int i = 0; i < MAX_SIZE; i++)
+		arr[i] = i;
+
+	for (int i = 0; i < MAX_SIZE; i++)
+		cout << arr[i] << endl;
+
+	// 동적 벼열
+	// 매우 매우 중요한 개념 -> 어떤 마법을 부렸길래 배열을 '유동적으로' 사용한 것인가?
+
+	// 1) (여유분을 두고) 메모리를 할당
+	// 2) 여유분깢 꽉 찼으면, 메모리를 증설한다
+
+	// Q1) 여유분은 얼만큼이 적당할까?
+	// Q2) 증설을 얼만큼 해야 할까?
+	// Q3) 기존 데이터를 어떻게 처리할까?
+
+	// [ 1 2 3 4 5 ]
+	// [                        ]
 
 
-	// EX) MoveTask 실습 등...
+	vector<int> v;
 
-	// 어떤 상황이 일어나면 -> 이 기능을 호출해 줘.
-	// ex) UI 스킬 버튼을 누르면 -> 스킬을 쓰는 함수를 호출
+	cout << v.size() << " " << v.capacity() << endl;
+	//v.resize(1000);
+	// size (실제 사용 데이터 개수)
+	// 1 2 3 4 5 6 7
 
-	Item items[10];
-	items[3]._ownerId = 100;
-	items[8]._rarity = 2;
 
-	FindByOwnerId functor1;
-	functor1._ownerId = 100;
+	//v.reserve(1000);
+	// capacity (여유분을 포함한 용량 개수)
+	//
+	// 1 2 3 4 6 9 13 19 28 42 63
 
-	FindByRarity functor2;
-	functor2._rarity = 1;
+	for (int i = 0; i < 1000; i++) {
+		v.push_back(100);
+		cout << v.size() << " " << v.capacity() << endl;
+	}
 
-	Item* item1 = FindItem(items, 10, functor1);
-	Item* item2 = FindItem(items, 10, functor2);
+	v.clear();
+	cout << v.size() << " " << v.capacity() << endl;
 
 	return 0;
 }
