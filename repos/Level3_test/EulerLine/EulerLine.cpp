@@ -43,7 +43,7 @@ void Eulerian(int curr) {
 		}
 	}
 
-	cout << curr + 1 << endl;
+	cout << curr + 1 << " ";
 }
 
 int main() {
@@ -84,6 +84,7 @@ int main() {
 
 	for (int i = 0; i < N; i++) {
 		if (degree[i] % 2 == 1) {
+			cout << "-1" << endl;
 			return 0;
 		}
 	}
@@ -97,6 +98,7 @@ int main() {
 
 			if (visitSize > 1) {
 				if (flag) {
+					cout << "-1" << endl;
 					return 0;
 				}
 				else {
