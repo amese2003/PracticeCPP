@@ -4,71 +4,157 @@ using namespace std;
 
 // 오늘의 주제 : vector
 
-int main()
+template<typename T>
+class Iterator {
+public:
+	Iterator() : _ptr(nullptr) {
+
+	}
+
+	Iterator(T* ptr) : _ptr(ptr) {
+
+	}
+
+	Iterator& operator++() {
+		_ptr++;
+		return *this;
+	}
+
+	Iterator operator+(const int count) {
+		Iterator temp = *this;
+		temp._ptr += count;
+		return temp;
+	}
+
+	Iterator operator-(const int count) {
+		Iterator temp = *this;
+		temp._ptr -= count;
+		return temp;
+	}
+
+	Iterator operator++(int) {
+		Iterator temp = *this;
+		_ptr++;
+		return temp;
+	}
+
+	Iterator& operator--() {
+		_ptr--;
+		return *this;
+	}
+
+	Iterator operator--(int) {
+		Iterator temp = *this;
+		_ptr--;
+		return temp;
+	}
+
+	bool operator==(const Iterator& right) {
+		return _ptr == right._ptr;
+	}
+
+	bool operator!=(const Iterator& right) {
+		return !(*this == right);
+	}
+
+	T& operator*() {
+		return *_ptr;
+	}
+
+public:
+	T* _ptr;
+};
+
+template<typename T>
+class Vector
 {
-	// STL (Standard Template Library)
-	// 프로그래밍 할 때 필요한 자료구조/알고리즘들을
-	// 템플릿으로 제공하는 라이브러리
+public:
 
-	// 컨테이너(Container) : 데이터를 저장하는 객체 (자료구조 Data Structrue)
-
-	// vector (동적 배열)
-	// - vector의 동작 원리 (size/capacity)
-	// - 중간 삽입/삭제
-	// - 처음/끝 삽입/삭제
-	// - 임의 접근
-
-	// 반복자 (iterator) : 포인터와 유사한 개념. 컨테이너의 원소(데이터)를 가리키고, 다음/이전 원소로 이동 가능
-	vector<int> v(10);
-
-	for (vector<int>::size_type i = 0; i < v.size(); i++) {
-		v[i] = i;
-	}
-
-	/*vector<int>::iterator it;
-	int* ptr;
-
-	it = v.begin();
-	ptr = &v[0];
-
-	cout << (*it) << endl;
-	cout << (*ptr) << endl;*/
-
-	vector<int>::iterator itBegin = v.begin();
-	vector<int>::iterator itEnd = v.end();
-
-	// 더 복잡해보이는데?
-	// 다른 컨테이너는 v[i] 와 같은 인덱스 접근이 안 될 수도 있음
-	// iterator는 vector뿐 아니라, 다른 컨테이너에도 공통적으로 있는 개념
-	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
-		cout << (*it) << endl;
-	}
-
-	vector<int>::const_iterator cit1 = v.cbegin();
-
-	for (vector<int>::reverse_iterator it = v.rbegin(); it != v.rend(); it++) {
-		cout << (*it) << endl;
-	}
-
-	// - 중간 삽입/삭제 (매우 비효율)
-	// - 처음/끝 삽입/삭제 (비효율 / good)
-	// - 임의 접근 (Random Access)
-
-	// vector = 동적 배열 = 동적으로 커지는 배열 = 배열
-	// 원소가 하나의 메모리 블록에 연속하게 저장되는 특징
-
-	// [                        ]
-	// {0}{1}{2}{3}{4} [] []    ]
-	//v.insert(v.begin() + 2, 5);
-
-	// 쭉 스캔을 하면서 3이라는 데이터가 있으면 일괄 삭제하고싶다?
-
-	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
-		int data = *it;
+	Vector() : _data(nullptr), _size(0), _capacity(0) {
 
 	}
+
+	~Vector() {
+		if (_data)
+			delete[] _data;
+	}
+
+	void push_back(const T& val) {
+		if (_size == _capacity) {
+			// 증설 작업
+			int newCapacity = static_cast<int>(_capacity * 1.5);
+
+			if (newCapacity == _capacity)
+				newCapacity++;
+
+			reserve(newCapacity);
+		}
+
+		// 데이터 저장
+		_data[_size] = val;
+
+		// 데이터 개수 증가
+		_size++;
+	}
+
+	void reserve(int capacity) {
+		_capacity = capacity;
+
+		T* newData = new T[_capacity];
+
+		// 데이터 복사
+		for (int i = 0; i < _size; i++) {
+			newData[i] = _data[i];
+		}
+
+		// 기존 데이터 삭제
+		if (_data)
+			delete[] _data;
+
+		// 주소 교체
+		_data = newData;
+	}
+
+	T& operator[](const int pos) { return _data[pos]; }
+
+	int Size() { return _size; }
+	int Capacity() { return _capacity; }
+	void clear() { _size = 0; }
+
+public:
+	typedef Iterator<T> iterator;
+
+	iterator begin() { return iterator(&_data[0]); }
+	iterator end() { return begin() + _size; }
+	
 	
 
+private:
+	T* _data;
+	int _size;
+	int _capacity;
+};
 
+
+
+int main()
+{
+	Vector<int> v;
+
+	for (int i = 0; i < 100; i++) {
+		v.push_back(i);
+		cout << v.Size() << " " << v.Capacity() << endl;
+	}
+
+	for (int i = 0; i < v.Size(); i++) {
+		cout << v[i] << endl;
+	}
+
+	cout << "---------------------------------" << endl;
+
+	for (Vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
+		cout << (*it) << endl;
+	}
+	
 	return 0;
 }
