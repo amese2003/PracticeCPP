@@ -18,50 +18,38 @@ int main()
 	// - 처음/끝 삽입/삭제
 	// - 임의 접근
 
-	// 배열
-	const int MAX_SIZE = 10;
-	int arr[MAX_SIZE] = {};
+	// 반복자 (iterator) : 포인터와 유사한 개념. 컨테이너의 원소(데이터)를 가리키고, 다음/이전 원소로 이동 가능
+	vector<int> v(10);
 
-	for (int i = 0; i < MAX_SIZE; i++)
-		arr[i] = i;
-
-	for (int i = 0; i < MAX_SIZE; i++)
-		cout << arr[i] << endl;
-
-	// 동적 벼열
-	// 매우 매우 중요한 개념 -> 어떤 마법을 부렸길래 배열을 '유동적으로' 사용한 것인가?
-
-	// 1) (여유분을 두고) 메모리를 할당
-	// 2) 여유분깢 꽉 찼으면, 메모리를 증설한다
-
-	// Q1) 여유분은 얼만큼이 적당할까?
-	// Q2) 증설을 얼만큼 해야 할까?
-	// Q3) 기존 데이터를 어떻게 처리할까?
-
-	// [ 1 2 3 4 5 ]
-	// [                        ]
-
-
-	vector<int> v;
-
-	cout << v.size() << " " << v.capacity() << endl;
-	//v.resize(1000);
-	// size (실제 사용 데이터 개수)
-	// 1 2 3 4 5 6 7
-
-
-	//v.reserve(1000);
-	// capacity (여유분을 포함한 용량 개수)
-	//
-	// 1 2 3 4 6 9 13 19 28 42 63
-
-	for (int i = 0; i < 1000; i++) {
-		v.push_back(100);
-		cout << v.size() << " " << v.capacity() << endl;
+	for (vector<int>::size_type i = 0; i < v.size(); i++) {
+		v[i] = i;
 	}
 
-	v.clear();
-	cout << v.size() << " " << v.capacity() << endl;
+	/*vector<int>::iterator it;
+	int* ptr;
+
+	it = v.begin();
+	ptr = &v[0];
+
+	cout << (*it) << endl;
+	cout << (*ptr) << endl;*/
+
+	vector<int>::iterator itBegin = v.begin();
+	vector<int>::iterator itEnd = v.end();
+
+	// 더 복잡해보이는데?
+	// 다른 컨테이너는 v[i] 와 같은 인덱스 접근이 안 될 수도 있음
+	// iterator는 vector뿐 아니라, 다른 컨테이너에도 공통적으로 있는 개념
+	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
+		cout << (*it) << endl;
+	}
+
+	vector<int>::const_iterator cit1 = v.cbegin();
+
+	for (vector<int>::reverse_iterator it = v.rbegin(); it != v.rend(); it++) {
+		cout << (*it) << endl;
+	}
+
 
 	return 0;
 }
