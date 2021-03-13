@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JewelShopping", "JewelShopp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Antenna", "Antenna\Antenna.vcxproj", "{33636FCC-031B-4C08-A9EB-A3265AA80D6C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EulerLine", "EulerLine\EulerLine.vcxproj", "{922551A0-1CF1-4B84-A822-7C31618946B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{33636FCC-031B-4C08-A9EB-A3265AA80D6C}.Release|x64.Build.0 = Release|x64
 		{33636FCC-031B-4C08-A9EB-A3265AA80D6C}.Release|x86.ActiveCfg = Release|Win32
 		{33636FCC-031B-4C08-A9EB-A3265AA80D6C}.Release|x86.Build.0 = Release|Win32
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Debug|x64.ActiveCfg = Debug|x64
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Debug|x64.Build.0 = Debug|x64
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Debug|x86.ActiveCfg = Debug|Win32
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Debug|x86.Build.0 = Debug|Win32
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Release|x64.ActiveCfg = Release|x64
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Release|x64.Build.0 = Release|x64
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Release|x86.ActiveCfg = Release|Win32
+		{922551A0-1CF1-4B84-A822-7C31618946B3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
