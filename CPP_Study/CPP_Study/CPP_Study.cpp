@@ -50,6 +50,25 @@ int main()
 		cout << (*it) << endl;
 	}
 
+	// - 중간 삽입/삭제 (매우 비효율)
+	// - 처음/끝 삽입/삭제 (비효율 / good)
+	// - 임의 접근 (Random Access)
+
+	// vector = 동적 배열 = 동적으로 커지는 배열 = 배열
+	// 원소가 하나의 메모리 블록에 연속하게 저장되는 특징
+
+	// [                        ]
+	// {0}{1}{2}{3}{4} [] []    ]
+	//v.insert(v.begin() + 2, 5);
+
+	// 쭉 스캔을 하면서 3이라는 데이터가 있으면 일괄 삭제하고싶다?
+
+	for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
+		int data = *it;
+
+	}
+	
+
 
 	return 0;
 }
