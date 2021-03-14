@@ -1,160 +1,52 @@
 ﻿#include <iostream>
 #include <vector>
+#include <list>
 using namespace std;
 
-// 오늘의 주제 : vector
+// 오늘의 주제 : list
 
-template<typename T>
-class Iterator {
+class Node {
 public:
-	Iterator() : _ptr(nullptr) {
-
-	}
-
-	Iterator(T* ptr) : _ptr(ptr) {
-
-	}
-
-	Iterator& operator++() {
-		_ptr++;
-		return *this;
-	}
-
-	Iterator operator+(const int count) {
-		Iterator temp = *this;
-		temp._ptr += count;
-		return temp;
-	}
-
-	Iterator operator-(const int count) {
-		Iterator temp = *this;
-		temp._ptr -= count;
-		return temp;
-	}
-
-	Iterator operator++(int) {
-		Iterator temp = *this;
-		_ptr++;
-		return temp;
-	}
-
-	Iterator& operator--() {
-		_ptr--;
-		return *this;
-	}
-
-	Iterator operator--(int) {
-		Iterator temp = *this;
-		_ptr--;
-		return temp;
-	}
-
-	bool operator==(const Iterator& right) {
-		return _ptr == right._ptr;
-	}
-
-	bool operator!=(const Iterator& right) {
-		return !(*this == right);
-	}
-
-	T& operator*() {
-		return *_ptr;
-	}
-
-public:
-	T* _ptr;
+	Node* _next;
+	int _data;
 };
-
-template<typename T>
-class Vector
-{
-public:
-
-	Vector() : _data(nullptr), _size(0), _capacity(0) {
-
-	}
-
-	~Vector() {
-		if (_data)
-			delete[] _data;
-	}
-
-	void push_back(const T& val) {
-		if (_size == _capacity) {
-			// 증설 작업
-			int newCapacity = static_cast<int>(_capacity * 1.5);
-
-			if (newCapacity == _capacity)
-				newCapacity++;
-
-			reserve(newCapacity);
-		}
-
-		// 데이터 저장
-		_data[_size] = val;
-
-		// 데이터 개수 증가
-		_size++;
-	}
-
-	void reserve(int capacity) {
-		_capacity = capacity;
-
-		T* newData = new T[_capacity];
-
-		// 데이터 복사
-		for (int i = 0; i < _size; i++) {
-			newData[i] = _data[i];
-		}
-
-		// 기존 데이터 삭제
-		if (_data)
-			delete[] _data;
-
-		// 주소 교체
-		_data = newData;
-	}
-
-	T& operator[](const int pos) { return _data[pos]; }
-
-	int Size() { return _size; }
-	int Capacity() { return _capacity; }
-	void clear() { _size = 0; }
-
-public:
-	typedef Iterator<T> iterator;
-
-	iterator begin() { return iterator(&_data[0]); }
-	iterator end() { return begin() + _size; }
-	
-	
-
-private:
-	T* _data;
-	int _size;
-	int _capacity;
-};
-
-
 
 int main()
 {
-	Vector<int> v;
+	// list (연결 리스트)
+	// - list의 동작 원리
+	// - 중간 삽입/삭제
+	// - 처음/끝 삽입/삭제
+	// - 임의 접근
 
-	for (int i = 0; i < 100; i++) {
-		v.push_back(i);
-		cout << v.Size() << " " << v.Capacity() << endl;
-	}
+	list<int> li;
 
-	for (int i = 0; i < v.Size(); i++) {
-		cout << v[i] << endl;
-	}
+	for (int i = 0; i < 100; i++)
+		li.push_back(0);
 
-	cout << "---------------------------------" << endl;
-
-	for (Vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
-		cout << (*it) << endl;
-	}
+	int size = li.size();
 	
+	int first = li.front();
+	int last = li.back();
+
+	// 임의 접근 비허용
+	//li[3] = 10; // 없음
+
+	list<int>::iterator itBegin = li.begin();
+	list<int>::iterator itEnd = li.end();
+
+	for (list<int>::iterator it = li.begin(); it != li.end(); it++) {
+		cout << *it << endl;
+	}
+
+	li.insert(itBegin, 100);
+
+	li.erase(li.begin());
+
+	li.pop_front();
+
+	li.remove(10);
+
+
 	return 0;
 }
