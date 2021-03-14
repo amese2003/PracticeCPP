@@ -1,179 +1,60 @@
 ﻿#include <iostream>
 #include <vector>
 #include <list>
+#include <deque>
 using namespace std;
 
-// 오늘의 주제 : list
+// 오늘의 주제 : deque
 
-template<typename T>
-class Node {
-public:
-	Node() : _next(nullptr), _prev(nullptr), _data(T()) {
+// vector : 동적 배열
+// [             ]
 
-	}
+// list : 이중 연결 리스트
+// [] <> [] <> [] <> []
 
-	Node(const T& value) : _next(nullptr), _prev(nullptr), _data(value) {
-
-	}
-
-public:
-	Node*	_next;
-	Node*	_prev;
-	T		_data;
-};
-
-template<typename T>
-class Iterator {
-public:
-	Iterator() : _node(nullptr) {
-
-	}
-
-	Iterator(Node<T>* node) : _node(node) {
-
-	}
-
-	Iterator<T>& operator++() {
-		_node = _node->_next;
-		return *this;
-	}
-
-	Iterator<T> operator++(int) {
-		Iterator<T> temp = *this;
-		_node = _node->next;
-		return temp;
-	}
-
-	Iterator<T>& operator--() {
-		_node = _node->_prev;
-		return *this;
-	}
-
-	Iterator<T> operator--(int) {
-		Iterator<T> temp = *this;
-		_node = _node->_prev;
-		return temp;
-	}
-
-	T& operator*() {
-		return _node->_data;
-	}
-
-	bool operator==(const Iterator& right) {
-		return _node == right._node;
-	}
-
-	bool operator!=(const Iterator& right) {
-		return _node != right._node;
-	}
-
-public:
-	// Containner
-	Node<T>* _node;
-};
-
-// [ header ]
-template<typename T>
-class List {
-public:
-	List() : _size(0) {
-		_header = new Node<T>();
-		_header->_next = _header;
-		_header->_prev = _header;
-	}
-
-	~List() {
-		// TODO
-		while (_size > 0)
-			pop_back();
-
-		delete _header;
-	}
-
-	void push_back(const T& value) {
-		AddNode(_header, value);
-	}
-
-	void pop_back() {
-		RemoveNode(_header->_prev);
-	}
-
-	// <-> [ header ] <->
-
-	// [1] <-> [2] <-> [before] <-> [4] <-> header <->
-	// [1] <-> [2] <-> [value] <-> [before] <-> [4] <-> header <->
-
-	Node<T>* AddNode(Node<T>* before, const int& value) {
-		Node<T>* node = new Node<T>(value);
-
-		Node<T>* prevNode = before->_prev;
-		prevNode->_next = node;
-		node->_prev = prevNode;
-
-		node->_next = before;
-		before->_prev = node;
-
-		_size++;
-
-		return node;
-	}
-
-	Node<T>* RemoveNode(Node<T>* node) {
-		Node<T>* prevNode = node->_prev;
-		Node<T>* nextNode = node->_next;
-
-		prevNode->_next = nextNode;
-		nextNode->_prev = prevNode;
-
-		delete node;
-		_size--;
-
-		return nextNode;
-	}
-
-	int Size() { return _size; }
-
-public:
-	typedef Iterator<T> iterator;
-	iterator begin() { return iterator(_header->_next); }
-	iterator end() { return iterator(_header); }
-
-	iterator insert(iterator it, const T& value) {
-		Node<T>* node = AddNode(it._node, value);
-		return iterator(node);
-	}
-
-	iterator erase(iterator it) {
-		Node<T>* node = RemoveNode(it._node);
-		return iterator(node);
-	}
-
-private:
-	Node<T>* _header;
-	int _size;
-};
+// deque : double-ended queue 데크
+// [      ]
+// [      ]
+// [      ]
 
 int main()
 {
-	List<int> li;
-	List<int>::iterator eraseIt;
+	// 시퀸스 컨테이너 (Sequence Container)
+	// 데이터가 삽입 순서대로 나열되는 형태
+	// vector list deque
 
-	for (int i = 0; i < 10; i++) {
+	// vector와 마찬가지로 배열 기반으로 동작
+	// 다만 메모리 할당 정책이 다르다
 
-		if (i == 5) {
-			eraseIt = li.insert(li.end(), i);
-		}
-		else {
-			li.push_back(i);
-		}
-	}
+	// vector
+	// [          ]              ]
 
-	li.pop_back();
-	li.erase(eraseIt);
+	// deque
+	// [          ]
+	// [          ]
+	// [          ]
 
-	for (List<int>::iterator it = li.begin(); it != li.end(); ++it) {
-		cout << (*it) << endl;
-	}
+	vector<int> v(3, 1);
+	deque<int> dq(3, 1);
+
+	v.push_back(2);
+	v.push_back(2);
+
+	dq.push_back(2);
+	dq.push_back(2);
+
+	dq.push_front(3);
+	dq.push_front(3);
+	
+
+	// - deque의 동작 원리
+	// - 중간 삽입/삭제 (BAD / BAD)
+	// - 처음/끝 삽입/삭제 (good / good)
+	// - 임의 접근 (GOOD)
+
+	dq[3] = 10;
+	cout << dq[3] << endl;
+	deque<int>::iterator it;
 
 
 	return 0;
