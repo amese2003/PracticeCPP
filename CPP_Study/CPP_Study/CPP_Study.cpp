@@ -8,6 +8,7 @@ using namespace std;
 class Node {
 public:
 	Node* _next;
+	Node* _prev;
 	int _data;
 };
 
@@ -20,6 +21,20 @@ int main()
 	// - 임의 접근
 
 	list<int> li;
+
+	list<int>::iterator itRemember;
+	for (int i = 0; i < 100; i++) {
+
+		if (i == 50) {
+			itRemember = li.insert(li.end(), i);
+		}
+		else {
+			li.push_back(i);
+		}
+
+
+	}
+
 
 	for (int i = 0; i < 100; i++)
 		li.push_back(0);
@@ -34,6 +49,15 @@ int main()
 
 	list<int>::iterator itBegin = li.begin();
 	list<int>::iterator itEnd = li.end();
+
+
+	//list<int>::iterator itTest1 = --itBegin;
+	//list<int>::iterator itTest2 = --itEnd;
+	//list<int>::iterator itTest3 = ++itEnd;
+
+	int* ptrBegin = &(li.front());
+	int* ptrEnd = &(li.back());
+
 
 	for (list<int>::iterator it = li.begin(); it != li.end(); it++) {
 		cout << *it << endl;
