@@ -8,54 +8,56 @@
 
 using namespace std;
 
-// 오늘의 주제 : 연습문제
+// 오늘의 주제 : 중괄호 초기화
 
 class Knight {
+public:
+	Knight() {
 
+	}
+
+	Knight(initializer_list<int> li) {
+		cout << "Knight(initializer_list)" << endl;
+	}
 };
 
 int main()
 {
+	// 중괄호 초기화 { }
+	int a = 0;
+	int b{ 0 };
+	int c{ 0 };
 
-	auto a = 3;
-	auto b = 3.14f;
-	auto c = 1.23;
-	auto d = Knight();
-	auto e = "Nero";
+	Knight k1;
+	Knight k2 = k1; // 복사 생성자 (대입 연산자가 아님!)
 
-	// auto는 일종의 조커카드
-	// 형식 연역 (type deduction)
-	// -> 말이 되게 잘 맞춰봐라. (추론)
-	// 추론 규칙은 생각보다 복잡해질 수 있다.
+	Knight k3{ k2 };
 
-	auto f = &d;
-	const auto test1 = b;
-	auto* test2 = e;
+	vector<int> v1;
 
-	// 주의!
-	// 기본 auto는 const, & 무시!!!!!!!!!!!
+	int arr[] = { 1,2,3,4 };
 
-	int& reference = a;
-	const int cst = a;
 	
-	auto test1 = reference;
-	auto test2 = cst;
 
-	vector<int> v;
-	v.push_back(1);
-	v.push_back(2);
-	v.push_back(3);
+	// 중괄호 초기화
+	// 1) vector 등 container과 잘 어울림
+	vector<int> v3{ 1,2,3,4 };
 
-	for (vector<int>::size_type i = 0; i < v.size(); i++) {
-		int& data = v[i];
+	// 2) 축소 변환 방지
+	int x = 0;
+	double y{ x };
 
-		data = 100;
-	}
+	// 3) Bonus
+	Knight k4{};
 
-	// 아무튼 이제 기존의 타입은 잊어버리고 auto만 쓴다?
-	// NO!
-	// -> 타이핑이 길어지는 경우 OK
-	// -> 가독성을 위해 일반적으로는 놔두는게 좋음
-	
+	// 괄호 초기화 () 기본으로 간다
+	// - 전통적인 c++ (거부감이 없다)
+	// - vector등 특이한 케이스에 대해서만 {} 사용
+
+	// 중괄호 초기화 {} 기본으로 간다
+	// - 초기화 문법의 일치화
+	// - 축소 변환 방지
+
+
 	return 0;
 }
