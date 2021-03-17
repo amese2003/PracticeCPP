@@ -8,37 +8,37 @@
 
 using namespace std;
 
-// 오늘의 주제 : enum class
+// 오늘의 주제 : delete (삭제된 함수)
 
-// unscoped enum (범위없는)
-enum PlayerType {
-	PT_Knight,
-	PT_Archer,
-	PT_Mage
+class Knight {
+public:
+
+public:
+	// 정의되지 않은 비공개 함수
+	void operator=(const Knight& k) = delete;
+
+
+	// 모든 것을 뚫는 창 vs 절대 방패
+	friend class Admin;
+private:
+	int _hp = 100;
 };
 
-enum MonsterType {
-	MT_Knight
-};
-
-enum class ObjectType {
-	Player,
-	Monster,
-	Projectile
+class Admin {
+public:
+	void CopyKnight(const Knight& k) {
+		Knight k1;
+	}
 };
 
 int main()
 {
-	// enum class (scoped enum)
-	// 1) 이름공간 관리 (scoped)
-	// 2) 암묵적인 변환 금지
-	PlayerType t;
-	cout << sizeof(t) << endl;
+	Knight k1;
 
-	double value = PT_Knight;
+	Knight k2;
 
-	double vlaue = static_cast<double>(ObjectType::Player);
-	
+	// 복사 연산자
+	//k1 = k2;
 
 	return 0;
 }
