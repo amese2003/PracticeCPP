@@ -8,37 +8,37 @@
 
 using namespace std;
 
-// 오늘의 주제 : delete (삭제된 함수)
+// 오늘의 주제 : override, final
 
-class Knight {
+class Creature {
 public:
-
-public:
-	// 정의되지 않은 비공개 함수
-	void operator=(const Knight& k) = delete;
-
-
-	// 모든 것을 뚫는 창 vs 절대 방패
-	friend class Admin;
-private:
-	int _hp = 100;
+	virtual void Attack() {
+		cout << "Player!" << endl;
+	}
 };
-
-class Admin {
+class Player : public Creature {
 public:
-	void CopyKnight(const Knight& k) {
-		Knight k1;
+	virtual void Attack() override {
+		cout << "Player!" << endl;
 	}
 };
 
+class Knight : public Player {
+public:
+	virtual void Attack() override {
+		cout << "Knight!" << endl;
+	}
+
+private:
+	int _stamina = 100;
+};
+
+
 int main()
 {
-	Knight k1;
+	Player* p = new Knight();
 
-	Knight k2;
-
-	// 복사 연산자
-	//k1 = k2;
+	p->Attack();
 
 	return 0;
 }
