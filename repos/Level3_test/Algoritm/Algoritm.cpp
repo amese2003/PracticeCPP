@@ -1,38 +1,39 @@
 #include <iostream>
 #include <string>
 #include <queue>
+#include <stack>
 
 using namespace std;
 
-string solution(string virused) {
-	string fixed = "";
-	char delta = 'a' - 'A';
+string solution(string pending) {
 
-	for (int i = 0; i < virused.length(); i++) {		
-		char word = virused[i];
+	stack<char> check;
 
-		if (word < 'A')
-			continue;
+	for (int i = 0; i < pending.length(); i++) {
 
-		if (word >= 'A' && word <= 'Z') {
-			word += delta;
-			fixed += word;
-			continue;
-		}
+		if (pending[i] == '(')
+			check.push(pending[i]);
+		else {
 
-		if (word >= 'a' && word <= 'z') {
-			fixed += word;
-			continue;
+			if (check.empty())
+				return "NO";
+			
+
+			if (check.top() == '(')
+				check.pop();
 		}
 	}
 
-	return fixed;
+	if (check.empty())
+		return "YES";
+	else
+		return "NO";
 }
 
 
 int main() {
+	string answer1 = solution("(()(()))(()");
 
-	string temp = solution("bE        au T I fu   L");
-
+	string answer2 = solution("()()(()())");
 	return 0;
 }
