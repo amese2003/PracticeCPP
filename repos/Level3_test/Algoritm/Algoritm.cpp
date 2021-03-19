@@ -2,38 +2,24 @@
 #include <string>
 #include <queue>
 #include <stack>
+#include <vector>
 
 using namespace std;
 
-string solution(string pending) {
+void MathFactor(int num) {
 
-	stack<char> check;
+	vector<int> visit(num + 1, 0);
 
-	for (int i = 0; i < pending.length(); i++) {
-
-		if (pending[i] == '(')
-			check.push(pending[i]);
-		else {
-
-			if (check.empty())
-				return "NO";
-			
-
-			if (check.top() == '(')
-				check.pop();
+	for (int i = 1; i <= num; i++) {
+		for (int j = i; j <= num; j += i) {
+			visit[j]++;				
 		}
 	}
-
-	if (check.empty())
-		return "YES";
-	else
-		return "NO";
 }
 
 
-int main() {
-	string answer1 = solution("(()(()))(()");
 
-	string answer2 = solution("()()(()())");
+int main() {
+	MathFactor(8);
 	return 0;
 }

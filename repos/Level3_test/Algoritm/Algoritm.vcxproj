@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="AgeDelta.cpp" />
     <ClCompile Include="Algoritm.cpp" />
+    <ClCompile Include="bracket.cpp" />
     <ClCompile Include="CDSum.cpp" />
     <ClCompile Include="NatureSum.cpp" />
     <ClCompile Include="NtoM.cpp" />
