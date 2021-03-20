@@ -45,6 +45,12 @@
     <ClCompile Include="bracket.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="MathFactor.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="digit_sum.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

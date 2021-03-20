@@ -143,6 +143,8 @@
     <ClCompile Include="Algoritm.cpp" />
     <ClCompile Include="bracket.cpp" />
     <ClCompile Include="CDSum.cpp" />
+    <ClCompile Include="digit_sum.cpp" />
+    <ClCompile Include="MathFactor.cpp" />
     <ClCompile Include="NatureSum.cpp" />
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
