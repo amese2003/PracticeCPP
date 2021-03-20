@@ -57,6 +57,12 @@
     <ClCompile Include="total_num_large.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="MostUseDigitNum.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="ReversePrime.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

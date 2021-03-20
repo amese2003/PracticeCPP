@@ -7,6 +7,26 @@
 
 using namespace std;
 
+int checkPrime_Large(int N) {
+
+	vector<bool> check(N + 1, false);
+
+	for (int i = 2; i < N; i++) {
+		if (check[i] == true)
+			continue;
+
+		for (int j = i + i; j < N; j += i) {
+			check[j] = true;
+		}
+	}
+
+	return 0;
+}
+
+
 int main() {
+
+	checkPrime_Large(20);
+
 	return 0;
 }

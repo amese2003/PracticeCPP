@@ -145,11 +145,13 @@
     <ClCompile Include="CDSum.cpp" />
     <ClCompile Include="digit_sum.cpp" />
     <ClCompile Include="MathFactor.cpp" />
+    <ClCompile Include="MostUseDigitNum.cpp" />
     <ClCompile Include="NatureSum.cpp" />
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
     <ClCompile Include="NumPut.cpp" />
     <ClCompile Include="RecoverString.cpp" />
+    <ClCompile Include="ReversePrime.cpp" />
     <ClCompile Include="total_num_large.cpp" />
     <ClCompile Include="total_num_small.cpp" />
   </ItemGroup>
