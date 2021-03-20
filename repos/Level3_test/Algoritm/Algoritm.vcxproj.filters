@@ -51,6 +51,12 @@
     <ClCompile Include="digit_sum.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="total_num_small.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="total_num_large.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

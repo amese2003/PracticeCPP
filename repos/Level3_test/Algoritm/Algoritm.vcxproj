@@ -150,6 +150,8 @@
     <ClCompile Include="AgeDelta2.cpp" />
     <ClCompile Include="NumPut.cpp" />
     <ClCompile Include="RecoverString.cpp" />
+    <ClCompile Include="total_num_large.cpp" />
+    <ClCompile Include="total_num_small.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />
