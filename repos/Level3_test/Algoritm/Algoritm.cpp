@@ -4,29 +4,42 @@
 #include <stack>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
-int checkPrime_Large(int N) {
+bool isAnagram(string target1, string target2) {
 
-	vector<bool> check(N + 1, false);
+	if (target1.length() != target2.length())
+		return false;
 
-	for (int i = 2; i < N; i++) {
-		if (check[i] == true)
-			continue;
+	unordered_map<char, int> check;
 
-		for (int j = i + i; j < N; j += i) {
-			check[j] = true;
-		}
+	for (int i = 0; i < target1.length(); i++) 
+		check[target1[i]]++;
+	
+	for (int i = 0; i < target2.length(); i++) {
+		if (check[target2[i]] == 0)
+			return false;
+
+		check[target2[i]]--;
+		if (check[target2[i]] == 0)
+			check.erase(check[target2[i]]);
 	}
 
-	return 0;
+	for (unordered_map<char, int>::iterator it = check.begin(); it != check.end(); it++) {
+		pair<const char, int>& get = (*it);
+
+		if (get.second > 0)
+			return false;
+	}
+
+	return true;
+
 }
 
-
 int main() {
-
-	checkPrime_Large(20);
+	bool TEST = isAnagram("AbaATeCe", "baeCeTACA");
 
 	return 0;
 }
