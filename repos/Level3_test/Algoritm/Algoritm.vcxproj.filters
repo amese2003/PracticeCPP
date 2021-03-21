@@ -72,6 +72,45 @@
     <ClCompile Include="teacher.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="FloorNoise.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Kakao_StringZip.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="AngerTrigger.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="RockPaper.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Tempature.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Increasement.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="JollyJumper.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="GetRank.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="NFactorial2.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="NFactorial3.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="NFactorial_small.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="CountDigit.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="GetElementWeight.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
