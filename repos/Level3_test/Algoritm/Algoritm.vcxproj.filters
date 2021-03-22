@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\Chap_1">
       <UniqueIdentifier>{ea1a70df-9c1b-46da-9589-72644a9ee5dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap_2">
+      <UniqueIdentifier>{fc01ea71-f57d-4b13-a97a-3d5868d67924}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algoritm.cpp">
@@ -110,6 +113,9 @@
     </ClCompile>
     <ClCompile Include="GetElementWeight.cpp">
       <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
