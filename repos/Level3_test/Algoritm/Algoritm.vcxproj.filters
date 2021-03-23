@@ -117,6 +117,9 @@
     <ClCompile Include="QuickSort.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
+    <ClCompile Include="Number3Get.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

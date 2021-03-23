@@ -161,6 +161,7 @@
     <ClCompile Include="NFactorial_small.cpp" />
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
+    <ClCompile Include="Number3Get.cpp" />
     <ClCompile Include="NumPut.cpp" />
     <ClCompile Include="PrimeCount.cpp" />
     <ClCompile Include="QuickSort.cpp" />
