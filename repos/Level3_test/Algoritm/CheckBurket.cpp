@@ -34,7 +34,7 @@ string CheckBurket(string test) {
 }
 
 
-int main() {
+int UseCheckBurket() {
 
 	string answer = CheckBurket("(()(()))(()");
 
