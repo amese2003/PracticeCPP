@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\Chap_2">
       <UniqueIdentifier>{fc01ea71-f57d-4b13-a97a-3d5868d67924}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap_3">
+      <UniqueIdentifier>{886ef1eb-d79a-455a-a6ee-d1f8468dffca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algoritm.cpp">
@@ -118,6 +121,108 @@
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
     <ClCompile Include="Number3Get.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Burblesort.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="BurbleSort2.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="insert.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="InversionSequence.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="MergePractice.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="LRUCache.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="InterSection.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="natureSum2.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearch.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="MusicRecord.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="HorseHouse.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="CityMap.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Princess.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TestingDevelopment.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiTasking.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckHigh.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="GetAvar.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockStacking.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalSquare.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="FarJump.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="NQueen.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="PassingTruck.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="StationSet.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="change.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="JwelShopping.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="MaxTerritory.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="UglyNumber.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="KConvert.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckBurket.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="EnglishWord.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveTrain.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillTree.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
+    <ClCompile Include="intTri.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="BestAlbum.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
   </ItemGroup>

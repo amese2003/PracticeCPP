@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -143,35 +143,69 @@
     <ClCompile Include="Algoritm.cpp" />
     <ClCompile Include="Anagram.cpp" />
     <ClCompile Include="AngerTrigger.cpp" />
+    <ClCompile Include="BestAlbum.cpp" />
+    <ClCompile Include="BinarySearch.cpp" />
+    <ClCompile Include="BlockStacking.cpp" />
     <ClCompile Include="bracket.cpp" />
+    <ClCompile Include="Burblesort.cpp" />
+    <ClCompile Include="BurbleSort2.cpp" />
     <ClCompile Include="CDSum.cpp" />
+    <ClCompile Include="change.cpp" />
+    <ClCompile Include="CheckBurket.cpp" />
+    <ClCompile Include="CheckHigh.cpp" />
+    <ClCompile Include="CityMap.cpp" />
     <ClCompile Include="CountDigit.cpp" />
     <ClCompile Include="digit_sum.cpp" />
+    <ClCompile Include="DriveTrain.cpp" />
+    <ClCompile Include="EnglishWord.cpp" />
+    <ClCompile Include="FarJump.cpp" />
     <ClCompile Include="FloorNoise.cpp" />
+    <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
     <ClCompile Include="GetRank.cpp" />
+    <ClCompile Include="HorseHouse.cpp" />
     <ClCompile Include="Increasement.cpp" />
+    <ClCompile Include="insert.cpp" />
+    <ClCompile Include="InterSection.cpp" />
+    <ClCompile Include="intTri.cpp" />
+    <ClCompile Include="InversionSequence.cpp" />
     <ClCompile Include="JollyJumper.cpp" />
+    <ClCompile Include="JwelShopping.cpp" />
     <ClCompile Include="Kakao_StringZip.cpp" />
+    <ClCompile Include="KConvert.cpp" />
+    <ClCompile Include="LRUCache.cpp" />
     <ClCompile Include="MathFactor.cpp" />
+    <ClCompile Include="MaxTerritory.cpp" />
+    <ClCompile Include="MergePractice.cpp" />
     <ClCompile Include="MostUseDigitNum.cpp" />
+    <ClCompile Include="MultiTasking.cpp" />
+    <ClCompile Include="MusicRecord.cpp" />
     <ClCompile Include="NatureSum.cpp" />
+    <ClCompile Include="natureSum2.cpp" />
     <ClCompile Include="NFactorial2.cpp" />
     <ClCompile Include="NFactorial3.cpp" />
     <ClCompile Include="NFactorial_small.cpp" />
+    <ClCompile Include="NormalSquare.cpp" />
+    <ClCompile Include="NQueen.cpp" />
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
     <ClCompile Include="Number3Get.cpp" />
     <ClCompile Include="NumPut.cpp" />
+    <ClCompile Include="PassingTruck.cpp" />
     <ClCompile Include="PrimeCount.cpp" />
+    <ClCompile Include="Princess.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="RecoverString.cpp" />
     <ClCompile Include="ReversePrime.cpp" />
     <ClCompile Include="RockPaper.cpp" />
+    <ClCompile Include="SkillTree.cpp" />
+    <ClCompile Include="StationSet.cpp" />
     <ClCompile Include="teacher.cpp" />
     <ClCompile Include="Tempature.cpp" />
+    <ClCompile Include="TestingDevelopment.cpp" />
     <ClCompile Include="total_num_large.cpp" />
     <ClCompile Include="total_num_small.cpp" />
+    <ClCompile Include="UglyNumber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />
