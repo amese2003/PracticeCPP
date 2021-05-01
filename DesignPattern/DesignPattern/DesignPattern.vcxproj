@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="DesignPattern.cpp" />
     <ClCompile Include="ObserverPattern.cpp" />
+    <ClCompile Include="PrototypePattern.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

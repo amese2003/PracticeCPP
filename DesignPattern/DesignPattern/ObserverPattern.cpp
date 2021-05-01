@@ -90,4 +90,5 @@ int ObserverMain()
     broadCaster->RemoveObserver(user2);
 
     broadCaster->BroadCast("≤‹¿ÎπÊº€");
+    return 0;
 }
