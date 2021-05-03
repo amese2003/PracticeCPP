@@ -225,6 +225,33 @@
     <ClCompile Include="BestAlbum.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
+    <ClCompile Include="UseTrie.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="RecursivePractice.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="RecursiveK.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DFSPractice.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeSubset.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="SameDFS.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeTargetMS.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeSort.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeNode.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

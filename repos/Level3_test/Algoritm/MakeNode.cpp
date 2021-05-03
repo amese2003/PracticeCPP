@@ -11,11 +11,11 @@ using namespace std;
 
 
 
-int main() {
+int MakeNode() {
 
 	const int N = 6;
 
-	vector<pair<int,int>> sum[N + 1];
+	vector<pair<int, int>> sum[N + 1];
 
 	sum[1].push_back({ 2,7 });
 	sum[1].push_back({ 3,4 });
