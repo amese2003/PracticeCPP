@@ -135,7 +135,7 @@ int MakeTable() {
 	return maxPay;
 }
 
-int main() {
+int MaxHeapMake() {
 	MakeTable();
 	return 0;
 }
