@@ -143,7 +143,9 @@
     <ClCompile Include="Algoritm.cpp" />
     <ClCompile Include="Anagram.cpp" />
     <ClCompile Include="AngerTrigger.cpp" />
+    <ClCompile Include="BellmanFloyd.cpp" />
     <ClCompile Include="BestAlbum.cpp" />
+    <ClCompile Include="BfsPractice.cpp" />
     <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="BlockStacking.cpp" />
     <ClCompile Include="bracket.cpp" />
@@ -157,9 +159,12 @@
     <ClCompile Include="CountDigit.cpp" />
     <ClCompile Include="DFSPractice.cpp" />
     <ClCompile Include="digit_sum.cpp" />
+    <ClCompile Include="Dijkstar.cpp" />
     <ClCompile Include="DriveTrain.cpp" />
     <ClCompile Include="EnglishWord.cpp" />
     <ClCompile Include="FarJump.cpp" />
+    <ClCompile Include="FindCow.cpp" />
+    <ClCompile Include="FindWayDFS.cpp" />
     <ClCompile Include="FloorNoise.cpp" />
     <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
@@ -174,12 +179,19 @@
     <ClCompile Include="JwelShopping.cpp" />
     <ClCompile Include="Kakao_StringZip.cpp" />
     <ClCompile Include="KConvert.cpp" />
+    <ClCompile Include="Kruskal.cpp" />
+    <ClCompile Include="LessCostWay.cpp" />
     <ClCompile Include="LRUCache.cpp" />
+    <ClCompile Include="MakeHeap.cpp" />
     <ClCompile Include="MakeNode.cpp" />
     <ClCompile Include="MakeSubset.cpp" />
+    <ClCompile Include="MakeSubsetCount.cpp" />
+    <ClCompile Include="MakeSubSetDFS.cpp" />
     <ClCompile Include="MakeTargetMS.cpp" />
     <ClCompile Include="MathFactor.cpp" />
+    <ClCompile Include="MaxHeapCost.cpp" />
     <ClCompile Include="MaxTerritory.cpp" />
+    <ClCompile Include="MazeSearch.cpp" />
     <ClCompile Include="MergePractice.cpp" />
     <ClCompile Include="MergeSort.cpp" />
     <ClCompile Include="MostUseDigitNum.cpp" />
@@ -199,6 +211,7 @@
     <ClCompile Include="PassingTruck.cpp" />
     <ClCompile Include="PrimeCount.cpp" />
     <ClCompile Include="Princess.cpp" />
+    <ClCompile Include="PrincessBFS.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="RecoverString.cpp" />
     <ClCompile Include="RecursiveK.cpp" />
@@ -206,6 +219,7 @@
     <ClCompile Include="ReversePrime.cpp" />
     <ClCompile Include="RockPaper.cpp" />
     <ClCompile Include="SameDFS.cpp" />
+    <ClCompile Include="SendMoreMoney.cpp" />
     <ClCompile Include="SkillTree.cpp" />
     <ClCompile Include="StationSet.cpp" />
     <ClCompile Include="teacher.cpp" />
@@ -214,6 +228,7 @@
     <ClCompile Include="total_num_large.cpp" />
     <ClCompile Include="total_num_small.cpp" />
     <ClCompile Include="UglyNumber.cpp" />
+    <ClCompile Include="UnionFind.cpp" />
     <ClCompile Include="UseTrie.cpp" />
   </ItemGroup>
   <ItemGroup>

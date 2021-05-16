@@ -252,6 +252,51 @@
     <ClCompile Include="MakeNode.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
+    <ClCompile Include="FindWayDFS.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeSearch.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="LessCostWay.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="BfsPractice.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="FindCow.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="PrincessBFS.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeHeap.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MaxHeapCost.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeSubsetCount.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="UnionFind.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Kruskal.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Dijkstar.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="BellmanFloyd.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeSubSetDFS.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="SendMoreMoney.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
