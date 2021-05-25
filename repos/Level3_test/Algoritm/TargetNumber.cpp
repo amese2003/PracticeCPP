@@ -19,6 +19,4 @@ void calculate(vector<int> numbers, int target, int cnt, int sum) {
 
 		return;
 	}
-
-	calculate(numbers, target, cnt + 1, sum + numbers[cnt]);
-	calculate(numbers, targe
+}

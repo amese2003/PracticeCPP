@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\Chap_3">
       <UniqueIdentifier>{886ef1eb-d79a-455a-a6ee-d1f8468dffca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap_4">
+      <UniqueIdentifier>{40d8334f-edcf-4e52-99f8-15b4cf725e9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algoritm.cpp">
@@ -295,6 +298,36 @@
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
     <ClCompile Include="SendMoreMoney.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeVacation.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeCalc.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Pizza.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgrammersNoodleFac.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeWord.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeIsland.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWork.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TargetNumber.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TripleStep.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortMiro.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
   </ItemGroup>
