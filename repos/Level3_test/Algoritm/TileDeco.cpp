@@ -4,7 +4,7 @@
 
 using namespace std;
 
-long long solution(int N) {
+long long TileDeco(int N) {
 	vector<long long> side_length(2, 1);
 
 	for (int i = 2; i < N; i++) {
