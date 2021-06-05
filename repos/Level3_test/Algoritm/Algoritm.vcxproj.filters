@@ -330,6 +330,33 @@
     <ClCompile Include="ShortMiro.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
+    <ClCompile Include="tomato.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Printer.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="LockAndKey.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TileDeco.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="LionKing.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="CutRope.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Stairs.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="LIS.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SportWear.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
