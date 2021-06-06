@@ -198,6 +198,7 @@
     <ClCompile Include="MakeVacation.cpp" />
     <ClCompile Include="MathFactor.cpp" />
     <ClCompile Include="MaxHeapCost.cpp" />
+    <ClCompile Include="MaxLineLIS.cpp" />
     <ClCompile Include="MaxTerritory.cpp" />
     <ClCompile Include="MazeSearch.cpp" />
     <ClCompile Include="MergePractice.cpp" />

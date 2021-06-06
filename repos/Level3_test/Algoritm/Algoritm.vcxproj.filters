@@ -357,6 +357,9 @@
     <ClCompile Include="SportWear.cpp">
       <Filter>소스 파일\Chap_4</Filter>
     </ClCompile>
+    <ClCompile Include="MaxLineLIS.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
