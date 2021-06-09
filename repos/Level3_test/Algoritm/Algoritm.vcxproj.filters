@@ -366,6 +366,9 @@
     <ClCompile Include="Ramen.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
+    <ClCompile Include="Immigration.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

@@ -172,6 +172,7 @@
     <ClCompile Include="GetElementWeight.cpp" />
     <ClCompile Include="GetRank.cpp" />
     <ClCompile Include="HorseHouse.cpp" />
+    <ClCompile Include="Immigration.cpp" />
     <ClCompile Include="Increasement.cpp" />
     <ClCompile Include="insert.cpp" />
     <ClCompile Include="InterSection.cpp" />
