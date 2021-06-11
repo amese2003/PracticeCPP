@@ -172,6 +172,7 @@
     <ClCompile Include="GetElementWeight.cpp" />
     <ClCompile Include="GetRank.cpp" />
     <ClCompile Include="HorseHouse.cpp" />
+    <ClCompile Include="Immigration.cpp" />
     <ClCompile Include="Increasement.cpp" />
     <ClCompile Include="insert.cpp" />
     <ClCompile Include="InterSection.cpp" />
@@ -249,6 +250,7 @@
     <ClCompile Include="tomato.cpp" />
     <ClCompile Include="total_num_large.cpp" />
     <ClCompile Include="total_num_small.cpp" />
+    <ClCompile Include="TravelPort.cpp" />
     <ClCompile Include="TripleStep.cpp" />
     <ClCompile Include="UglyNumber.cpp" />
     <ClCompile Include="UnionFind.cpp" />
