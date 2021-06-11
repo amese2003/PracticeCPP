@@ -204,6 +204,7 @@
     <ClCompile Include="MazeSearch.cpp" />
     <ClCompile Include="MergePractice.cpp" />
     <ClCompile Include="MergeSort.cpp" />
+    <ClCompile Include="MinCost.cpp" />
     <ClCompile Include="MostUseDigitNum.cpp" />
     <ClCompile Include="MultiTasking.cpp" />
     <ClCompile Include="MusicRecord.cpp" />
