@@ -206,6 +206,7 @@
     <ClCompile Include="MergePractice.cpp" />
     <ClCompile Include="MergeSort.cpp" />
     <ClCompile Include="MinCost.cpp" />
+    <ClCompile Include="MinCostBottomDown.cpp" />
     <ClCompile Include="MostUseDigitNum.cpp" />
     <ClCompile Include="MultiTasking.cpp" />
     <ClCompile Include="MusicRecord.cpp" />
