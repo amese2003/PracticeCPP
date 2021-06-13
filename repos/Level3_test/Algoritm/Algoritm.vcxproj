@@ -182,6 +182,7 @@
     <ClCompile Include="JwelShopping.cpp" />
     <ClCompile Include="Kakao_StringZip.cpp" />
     <ClCompile Include="KConvert.cpp" />
+    <ClCompile Include="Knapsack.cpp" />
     <ClCompile Include="Kruskal.cpp" />
     <ClCompile Include="LessCostWay.cpp" />
     <ClCompile Include="LionKing.cpp" />
