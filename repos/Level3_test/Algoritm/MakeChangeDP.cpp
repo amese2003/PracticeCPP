@@ -27,8 +27,3 @@ void MakeChangeDP() {
 
 	cout << changeCost[target] << endl;
 }
-
-int main() {
-	MakeChangeDP();
-	return 0;
-}

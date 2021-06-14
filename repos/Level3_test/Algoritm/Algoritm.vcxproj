@@ -190,6 +190,7 @@
     <ClCompile Include="LockAndKey.cpp" />
     <ClCompile Include="LRUCache.cpp" />
     <ClCompile Include="MakeCalc.cpp" />
+    <ClCompile Include="MakeChangeDP.cpp" />
     <ClCompile Include="MakeHeap.cpp" />
     <ClCompile Include="MakeIsland.cpp" />
     <ClCompile Include="MakeNode.cpp" />
