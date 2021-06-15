@@ -202,6 +202,7 @@
     <ClCompile Include="MathFactor.cpp" />
     <ClCompile Include="MaxHeapCost.cpp" />
     <ClCompile Include="MaxLineLIS.cpp" />
+    <ClCompile Include="MaxScoreDP.cpp" />
     <ClCompile Include="MaxTerritory.cpp" />
     <ClCompile Include="MaxTowerHeight.cpp" />
     <ClCompile Include="MazeSearch.cpp" />
