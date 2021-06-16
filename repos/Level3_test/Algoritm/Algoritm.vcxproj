@@ -259,6 +259,7 @@
     <ClCompile Include="UglyNumber.cpp" />
     <ClCompile Include="UnionFind.cpp" />
     <ClCompile Include="UseTrie.cpp" />
+    <ClCompile Include="Vote.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />
