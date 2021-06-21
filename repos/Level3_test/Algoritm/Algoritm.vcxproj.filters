@@ -366,11 +366,32 @@
     <ClCompile Include="Ramen.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
-    <ClCompile Include="Immigration.cpp">
+    <ClCompile Include="MinCost.cpp">
       <Filter>소스 파일\Chap_4</Filter>
     </ClCompile>
+    <ClCompile Include="Immigration.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="TravelPort.cpp">
-      <Filter>소스 파일\Chap_3</Filter>
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MinCostBottomDown.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Knapsack.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeChangeDP.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="MaxScoreDP.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Vote.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SchoolRoad.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
     </ClCompile>
     <ClCompile Include="Scovill.cpp">
       <Filter>소스 파일\Chap_3</Filter>
