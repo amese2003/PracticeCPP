@@ -182,7 +182,6 @@
     <ClCompile Include="JwelShopping.cpp" />
     <ClCompile Include="Kakao_StringZip.cpp" />
     <ClCompile Include="KConvert.cpp" />
-    <ClCompile Include="Knapsack.cpp" />
     <ClCompile Include="Kruskal.cpp" />
     <ClCompile Include="LessCostWay.cpp" />
     <ClCompile Include="LionKing.cpp" />
@@ -190,7 +189,6 @@
     <ClCompile Include="LockAndKey.cpp" />
     <ClCompile Include="LRUCache.cpp" />
     <ClCompile Include="MakeCalc.cpp" />
-    <ClCompile Include="MakeChangeDP.cpp" />
     <ClCompile Include="MakeHeap.cpp" />
     <ClCompile Include="MakeIsland.cpp" />
     <ClCompile Include="MakeNode.cpp" />
@@ -202,14 +200,11 @@
     <ClCompile Include="MathFactor.cpp" />
     <ClCompile Include="MaxHeapCost.cpp" />
     <ClCompile Include="MaxLineLIS.cpp" />
-    <ClCompile Include="MaxScoreDP.cpp" />
     <ClCompile Include="MaxTerritory.cpp" />
     <ClCompile Include="MaxTowerHeight.cpp" />
     <ClCompile Include="MazeSearch.cpp" />
     <ClCompile Include="MergePractice.cpp" />
     <ClCompile Include="MergeSort.cpp" />
-    <ClCompile Include="MinCost.cpp" />
-    <ClCompile Include="MinCostBottomDown.cpp" />
     <ClCompile Include="MostUseDigitNum.cpp" />
     <ClCompile Include="MultiTasking.cpp" />
     <ClCompile Include="MusicRecord.cpp" />
@@ -241,7 +236,7 @@
     <ClCompile Include="ReversePrime.cpp" />
     <ClCompile Include="RockPaper.cpp" />
     <ClCompile Include="SameDFS.cpp" />
-    <ClCompile Include="SchoolRoad.cpp" />
+    <ClCompile Include="Scovill.cpp" />
     <ClCompile Include="SendMoreMoney.cpp" />
     <ClCompile Include="ShortMiro.cpp" />
     <ClCompile Include="SkillTree.cpp" />
@@ -261,7 +256,6 @@
     <ClCompile Include="UglyNumber.cpp" />
     <ClCompile Include="UnionFind.cpp" />
     <ClCompile Include="UseTrie.cpp" />
-    <ClCompile Include="Vote.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />
