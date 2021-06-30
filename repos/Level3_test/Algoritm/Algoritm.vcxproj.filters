@@ -393,6 +393,9 @@
     <ClCompile Include="SchoolRoad.cpp">
       <Filter>소스 파일\Chap_4</Filter>
     </ClCompile>
+    <ClCompile Include="palindrome.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
