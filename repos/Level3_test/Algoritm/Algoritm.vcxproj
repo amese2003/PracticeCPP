@@ -223,6 +223,7 @@
     <ClCompile Include="palindrome.cpp" />
     <ClCompile Include="PassingTruck.cpp" />
     <ClCompile Include="Pizza.cpp" />
+    <ClCompile Include="Prime.cpp" />
     <ClCompile Include="PrimeCount.cpp" />
     <ClCompile Include="Princess.cpp" />
     <ClCompile Include="PrincessBFS.cpp" />
