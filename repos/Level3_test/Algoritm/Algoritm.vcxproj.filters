@@ -381,6 +381,9 @@
     <ClCompile Include="Prime.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
+    <ClCompile Include="ShortWay.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

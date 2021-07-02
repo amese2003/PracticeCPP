@@ -240,6 +240,7 @@
     <ClCompile Include="Scovill.cpp" />
     <ClCompile Include="SendMoreMoney.cpp" />
     <ClCompile Include="ShortMiro.cpp" />
+    <ClCompile Include="ShortWay.cpp" />
     <ClCompile Include="SkillTree.cpp" />
     <ClCompile Include="SportWear.cpp" />
     <ClCompile Include="Stairs.cpp" />
