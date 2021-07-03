@@ -184,6 +184,7 @@
     <ClCompile Include="KConvert.cpp" />
     <ClCompile Include="Kruskal.cpp" />
     <ClCompile Include="LessCostWay.cpp" />
+    <ClCompile Include="LifeBoat.cpp" />
     <ClCompile Include="LionKing.cpp" />
     <ClCompile Include="LIS.cpp" />
     <ClCompile Include="LockAndKey.cpp" />
