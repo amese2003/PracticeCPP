@@ -147,6 +147,7 @@
     <ClCompile Include="BestAlbum.cpp" />
     <ClCompile Include="BfsPractice.cpp" />
     <ClCompile Include="BinarySearch.cpp" />
+    <ClCompile Include="BlockMove.cpp" />
     <ClCompile Include="BlockStacking.cpp" />
     <ClCompile Include="bracket.cpp" />
     <ClCompile Include="Burblesort.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="digit_sum.cpp" />
     <ClCompile Include="Dijkstar.cpp" />
     <ClCompile Include="DriveTrain.cpp" />
+    <ClCompile Include="Drone.cpp" />
     <ClCompile Include="EnglishWord.cpp" />
     <ClCompile Include="FarJump.cpp" />
     <ClCompile Include="FindCow.cpp" />

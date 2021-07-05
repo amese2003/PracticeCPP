@@ -387,6 +387,12 @@
     <ClCompile Include="LifeBoat.cpp">
       <Filter>소스 파일\Chap_4</Filter>
     </ClCompile>
+    <ClCompile Include="BlockMove.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Drone.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
