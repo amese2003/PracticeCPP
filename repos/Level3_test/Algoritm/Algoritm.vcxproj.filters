@@ -393,6 +393,9 @@
     <ClCompile Include="Drone.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
+    <ClCompile Include="unfinished.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
