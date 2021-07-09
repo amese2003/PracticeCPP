@@ -195,6 +195,7 @@
     <ClCompile Include="MakeHeap.cpp" />
     <ClCompile Include="MakeIsland.cpp" />
     <ClCompile Include="MakeNode.cpp" />
+    <ClCompile Include="MakeString.cpp" />
     <ClCompile Include="MakeSubset.cpp" />
     <ClCompile Include="MakeSubsetCount.cpp" />
     <ClCompile Include="MakeSubSetDFS.cpp" />
