@@ -402,6 +402,9 @@
     <ClCompile Include="MakeString.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="EnglisgEnding.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

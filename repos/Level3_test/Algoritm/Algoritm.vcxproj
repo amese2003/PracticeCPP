@@ -165,6 +165,7 @@
     <ClCompile Include="Dijkstar.cpp" />
     <ClCompile Include="DriveTrain.cpp" />
     <ClCompile Include="Drone.cpp" />
+    <ClCompile Include="EnglisgEnding.cpp" />
     <ClCompile Include="EnglishWord.cpp" />
     <ClCompile Include="FarJump.cpp" />
     <ClCompile Include="FindCow.cpp" />
