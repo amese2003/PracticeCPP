@@ -266,6 +266,7 @@
     <ClCompile Include="unfinished.cpp" />
     <ClCompile Include="UnionFind.cpp" />
     <ClCompile Include="UseTrie.cpp" />
+    <ClCompile Include="VisitLength.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />

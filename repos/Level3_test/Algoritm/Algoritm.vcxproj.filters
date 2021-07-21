@@ -408,6 +408,9 @@
     <ClCompile Include="StockPrice.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
+    <ClCompile Include="VisitLength.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
