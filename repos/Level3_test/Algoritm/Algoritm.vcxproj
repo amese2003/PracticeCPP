@@ -157,6 +157,7 @@
     <ClCompile Include="ChangeWord.cpp" />
     <ClCompile Include="CheckBurket.cpp" />
     <ClCompile Include="CheckHigh.cpp" />
+    <ClCompile Include="CheckWin.cpp" />
     <ClCompile Include="CityMap.cpp" />
     <ClCompile Include="CountDigit.cpp" />
     <ClCompile Include="CutRope.cpp" />

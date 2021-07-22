@@ -411,6 +411,9 @@
     <ClCompile Include="VisitLength.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="CheckWin.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
