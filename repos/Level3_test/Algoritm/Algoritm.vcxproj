@@ -253,6 +253,7 @@
     <ClCompile Include="Stairs.cpp" />
     <ClCompile Include="StationSet.cpp" />
     <ClCompile Include="StockPrice.cpp" />
+    <ClCompile Include="stringzip.cpp" />
     <ClCompile Include="TargetNumber.cpp" />
     <ClCompile Include="teacher.cpp" />
     <ClCompile Include="Tempature.cpp" />
