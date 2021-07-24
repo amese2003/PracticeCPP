@@ -264,6 +264,7 @@
     <ClCompile Include="total_num_small.cpp" />
     <ClCompile Include="TravelPort.cpp" />
     <ClCompile Include="TripleStep.cpp" />
+    <ClCompile Include="TruckPass.cpp" />
     <ClCompile Include="UglyNumber.cpp" />
     <ClCompile Include="unfinished.cpp" />
     <ClCompile Include="UnionFind.cpp" />
