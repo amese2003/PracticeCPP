@@ -417,6 +417,12 @@
     <ClCompile Include="stringzip.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="TruckPass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DiskController.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

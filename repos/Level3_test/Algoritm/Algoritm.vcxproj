@@ -164,6 +164,7 @@
     <ClCompile Include="DFSPractice.cpp" />
     <ClCompile Include="digit_sum.cpp" />
     <ClCompile Include="Dijkstar.cpp" />
+    <ClCompile Include="DiskController.cpp" />
     <ClCompile Include="DriveTrain.cpp" />
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="EnglisgEnding.cpp" />
