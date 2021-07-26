@@ -259,6 +259,7 @@
     <ClCompile Include="teacher.cpp" />
     <ClCompile Include="Tempature.cpp" />
     <ClCompile Include="TestingDevelopment.cpp" />
+    <ClCompile Include="Theif.cpp" />
     <ClCompile Include="TileDeco.cpp" />
     <ClCompile Include="tomato.cpp" />
     <ClCompile Include="total_num_large.cpp" />
