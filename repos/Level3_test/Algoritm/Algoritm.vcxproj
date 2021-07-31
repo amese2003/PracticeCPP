@@ -147,7 +147,6 @@
     <ClCompile Include="BestAlbum.cpp" />
     <ClCompile Include="BfsPractice.cpp" />
     <ClCompile Include="BinarySearch.cpp" />
-    <ClCompile Include="BlockMove.cpp" />
     <ClCompile Include="BlockStacking.cpp" />
     <ClCompile Include="bracket.cpp" />
     <ClCompile Include="Burblesort.cpp" />
@@ -199,6 +198,7 @@
     <ClCompile Include="MakeHeap.cpp" />
     <ClCompile Include="MakeIsland.cpp" />
     <ClCompile Include="MakeNode.cpp" />
+    <ClCompile Include="MakePrime.cpp" />
     <ClCompile Include="MakeString.cpp" />
     <ClCompile Include="MakeSubset.cpp" />
     <ClCompile Include="MakeSubsetCount.cpp" />
@@ -229,7 +229,6 @@
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
     <ClCompile Include="Number3Get.cpp" />
-    <ClCompile Include="NumPut.cpp" />
     <ClCompile Include="palindrome.cpp" />
     <ClCompile Include="PassingTruck.cpp" />
     <ClCompile Include="Pizza.cpp" />

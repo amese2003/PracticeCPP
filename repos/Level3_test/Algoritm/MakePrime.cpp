@@ -20,7 +20,7 @@ void CheckPrime(vector<bool>& isPrime, int num) {
 
 void MakePrime(vector<int>& nums, const vector<bool>& isPrime, int& ans, int L, int index, int sum) {
     if (L == 3) {
-        if (isPrime[sum]) 
+        if (isPrime[sum])
             ans++;
 
 

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool CheckUse(vector<string> words, string useWord, int pos);
+bool CheckUse(vector<string> words, int pos);
 vector<int> EnglishEnd(int n, vector<string> words);
 
 vector<int> EnglishEnd(int n, vector<string> words) {

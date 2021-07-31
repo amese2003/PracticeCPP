@@ -45,9 +45,6 @@
     <ClCompile Include="AgeDelta2.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
-    <ClCompile Include="NumPut.cpp">
-      <Filter>소스 파일\Chap_1</Filter>
-    </ClCompile>
     <ClCompile Include="RecoverString.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
@@ -387,9 +384,6 @@
     <ClCompile Include="LifeBoat.cpp">
       <Filter>소스 파일\Chap_4</Filter>
     </ClCompile>
-    <ClCompile Include="BlockMove.cpp">
-      <Filter>소스 파일\Chap_4</Filter>
-    </ClCompile>
     <ClCompile Include="Drone.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
@@ -434,6 +428,9 @@
     </ClCompile>
     <ClCompile Include="Coliz.cpp">
       <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="MakePrime.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
