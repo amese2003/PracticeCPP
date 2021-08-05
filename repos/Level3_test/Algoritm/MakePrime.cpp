@@ -48,7 +48,7 @@ int MakePrimeSol(vector<int> nums) {
     return answer;
 }
 
-void main() {
-    vector<int> nums{ 1,2,3,4 };
-    MakePrimeSol(nums);
-}
+//void main() {
+//    vector<int> nums{ 1,2,3,4 };
+//    MakePrimeSol(nums);
+//}

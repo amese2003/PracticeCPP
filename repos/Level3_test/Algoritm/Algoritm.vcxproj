@@ -225,6 +225,7 @@
     <ClCompile Include="NFactorial3.cpp" />
     <ClCompile Include="NFactorial_small.cpp" />
     <ClCompile Include="NormalSquare.cpp" />
+    <ClCompile Include="NotEnough.cpp" />
     <ClCompile Include="NQueen.cpp" />
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
