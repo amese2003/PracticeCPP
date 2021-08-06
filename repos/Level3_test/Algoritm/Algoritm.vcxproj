@@ -248,6 +248,7 @@
     <ClCompile Include="RockPaper.cpp" />
     <ClCompile Include="SameDFS.cpp" />
     <ClCompile Include="Scovill.cpp" />
+    <ClCompile Include="SecretMap.cpp" />
     <ClCompile Include="SendMoreMoney.cpp" />
     <ClCompile Include="ShortMiro.cpp" />
     <ClCompile Include="ShortWay.cpp" />
