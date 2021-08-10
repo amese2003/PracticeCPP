@@ -46,8 +46,3 @@ int WordInt(string s) {
 
     return answer;
 }
-
-void main() {
-    int ans = WordInt("123");
-    cout << ans << endl;
-}
