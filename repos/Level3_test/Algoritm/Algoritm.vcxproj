@@ -160,6 +160,7 @@
     <ClCompile Include="CheckWin.cpp" />
     <ClCompile Include="CityMap.cpp" />
     <ClCompile Include="Coliz.cpp" />
+    <ClCompile Include="ConnectIsland.cpp" />
     <ClCompile Include="CountDigit.cpp" />
     <ClCompile Include="CutRope.cpp" />
     <ClCompile Include="DFSPractice.cpp" />
