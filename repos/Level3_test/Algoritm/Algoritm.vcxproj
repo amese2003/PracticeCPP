@@ -179,6 +179,7 @@
     <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
     <ClCompile Include="GetRank.cpp" />
+    <ClCompile Include="Harshad.cpp" />
     <ClCompile Include="HorseHouse.cpp" />
     <ClCompile Include="Immigration.cpp" />
     <ClCompile Include="Increasement.cpp" />
