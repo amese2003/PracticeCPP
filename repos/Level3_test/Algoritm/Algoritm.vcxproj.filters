@@ -432,8 +432,23 @@
     <ClCompile Include="MakePrime.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
-    <ClCompile Include="Evaluation.cpp">
+    <ClCompile Include="NotEnough.cpp">
       <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SecretMap.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Failure.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="charInt.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectIsland.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Harshad.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

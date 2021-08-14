@@ -154,11 +154,13 @@
     <ClCompile Include="CDSum.cpp" />
     <ClCompile Include="change.cpp" />
     <ClCompile Include="ChangeWord.cpp" />
+    <ClCompile Include="charInt.cpp" />
     <ClCompile Include="CheckBurket.cpp" />
     <ClCompile Include="CheckHigh.cpp" />
     <ClCompile Include="CheckWin.cpp" />
     <ClCompile Include="CityMap.cpp" />
     <ClCompile Include="Coliz.cpp" />
+    <ClCompile Include="ConnectIsland.cpp" />
     <ClCompile Include="CountDigit.cpp" />
     <ClCompile Include="CutRope.cpp" />
     <ClCompile Include="DFSPractice.cpp" />
@@ -169,7 +171,7 @@
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="EnglisgEnding.cpp" />
     <ClCompile Include="EnglishWord.cpp" />
-    <ClCompile Include="Evaluation.cpp" />
+    <ClCompile Include="Failure.cpp" />
     <ClCompile Include="FarJump.cpp" />
     <ClCompile Include="FindCow.cpp" />
     <ClCompile Include="FindWayDFS.cpp" />
@@ -177,6 +179,7 @@
     <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
     <ClCompile Include="GetRank.cpp" />
+    <ClCompile Include="Harshad.cpp" />
     <ClCompile Include="HorseHouse.cpp" />
     <ClCompile Include="Immigration.cpp" />
     <ClCompile Include="Increasement.cpp" />
@@ -226,6 +229,7 @@
     <ClCompile Include="NFactorial3.cpp" />
     <ClCompile Include="NFactorial_small.cpp" />
     <ClCompile Include="NormalSquare.cpp" />
+    <ClCompile Include="NotEnough.cpp" />
     <ClCompile Include="NQueen.cpp" />
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
@@ -248,6 +252,7 @@
     <ClCompile Include="RockPaper.cpp" />
     <ClCompile Include="SameDFS.cpp" />
     <ClCompile Include="Scovill.cpp" />
+    <ClCompile Include="SecretMap.cpp" />
     <ClCompile Include="SendMoreMoney.cpp" />
     <ClCompile Include="ShortMiro.cpp" />
     <ClCompile Include="ShortWay.cpp" />
