@@ -432,6 +432,9 @@
     <ClCompile Include="MakePrime.cpp">
       <Filter>소스 파일\Chap_3</Filter>
     </ClCompile>
+    <ClCompile Include="Evaluation.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

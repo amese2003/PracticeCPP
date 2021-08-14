@@ -169,6 +169,7 @@
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="EnglisgEnding.cpp" />
     <ClCompile Include="EnglishWord.cpp" />
+    <ClCompile Include="Evaluation.cpp" />
     <ClCompile Include="FarJump.cpp" />
     <ClCompile Include="FindCow.cpp" />
     <ClCompile Include="FindWayDFS.cpp" />
