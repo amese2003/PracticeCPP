@@ -157,6 +157,7 @@
     <ClCompile Include="charInt.cpp" />
     <ClCompile Include="CheckBurket.cpp" />
     <ClCompile Include="CheckHigh.cpp" />
+    <ClCompile Include="CheckWall.cpp" />
     <ClCompile Include="CheckWin.cpp" />
     <ClCompile Include="CityMap.cpp" />
     <ClCompile Include="Coliz.cpp" />
