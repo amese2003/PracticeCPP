@@ -168,6 +168,7 @@
     <ClCompile Include="digit_sum.cpp" />
     <ClCompile Include="Dijkstar.cpp" />
     <ClCompile Include="DiskController.cpp" />
+    <ClCompile Include="DoublePrioirty.cpp" />
     <ClCompile Include="DriveTrain.cpp" />
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="EnglisgEnding.cpp" />
