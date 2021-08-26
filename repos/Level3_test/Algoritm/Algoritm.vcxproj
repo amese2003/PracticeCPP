@@ -282,6 +282,7 @@
     <ClCompile Include="UseTrie.cpp" />
     <ClCompile Include="VisitLength.cpp" />
     <ClCompile Include="xFar.cpp" />
+    <ClCompile Include="xterm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />
