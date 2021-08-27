@@ -143,6 +143,7 @@
     <ClCompile Include="Algoritm.cpp" />
     <ClCompile Include="Anagram.cpp" />
     <ClCompile Include="AngerTrigger.cpp" />
+    <ClCompile Include="Avar.cpp" />
     <ClCompile Include="BellmanFloyd.cpp" />
     <ClCompile Include="BestAlbum.cpp" />
     <ClCompile Include="BfsPractice.cpp" />
