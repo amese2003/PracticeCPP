@@ -284,6 +284,7 @@
     <ClCompile Include="VisitLength.cpp" />
     <ClCompile Include="xFar.cpp" />
     <ClCompile Include="xterm.cpp" />
+    <ClCompile Include="빙고.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />

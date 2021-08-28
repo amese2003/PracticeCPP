@@ -462,6 +462,9 @@
     <ClCompile Include="Avar.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="빙고.cpp">
+      <Filter>소스 파일\Chap_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
