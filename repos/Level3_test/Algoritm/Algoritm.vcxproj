@@ -281,6 +281,7 @@
     <ClCompile Include="UnionFind.cpp" />
     <ClCompile Include="UseTrie.cpp" />
     <ClCompile Include="VisitLength.cpp" />
+    <ClCompile Include="WorldPuzzle.cpp" />
     <ClCompile Include="xFar.cpp" />
   </ItemGroup>
   <ItemGroup>

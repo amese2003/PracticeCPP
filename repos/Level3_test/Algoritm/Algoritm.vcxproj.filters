@@ -456,6 +456,9 @@
     <ClCompile Include="PlusMinus.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
+    <ClCompile Include="WorldPuzzle.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
