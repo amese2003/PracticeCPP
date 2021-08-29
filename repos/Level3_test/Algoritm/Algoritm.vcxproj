@@ -195,6 +195,7 @@
     <ClCompile Include="Kakao_StringZip.cpp" />
     <ClCompile Include="KConvert.cpp" />
     <ClCompile Include="Kruskal.cpp" />
+    <ClCompile Include="lastpoint.cpp" />
     <ClCompile Include="LessCostWay.cpp" />
     <ClCompile Include="LifeBoat.cpp" />
     <ClCompile Include="LionKing.cpp" />
