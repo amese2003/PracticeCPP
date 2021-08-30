@@ -477,4 +477,9 @@
       <Filter>소스 파일\Chap_1</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Sticker.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </None>
+  </ItemGroup>
 </Project>
