@@ -459,6 +459,18 @@
     <ClCompile Include="WorldPuzzle.cpp">
       <Filter>소스 파일\Chap_4</Filter>
     </ClCompile>
+    <ClCompile Include="Avar.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DoublePrioirty.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="xterm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Snail.cpp">
+      <Filter>소스 파일\Chap_3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

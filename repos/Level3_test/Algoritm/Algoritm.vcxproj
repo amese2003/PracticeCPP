@@ -261,6 +261,7 @@
     <ClCompile Include="ShortMiro.cpp" />
     <ClCompile Include="ShortWay.cpp" />
     <ClCompile Include="SkillTree.cpp" />
+    <ClCompile Include="Snail.cpp" />
     <ClCompile Include="SportWear.cpp" />
     <ClCompile Include="Stairs.cpp" />
     <ClCompile Include="StationSet.cpp" />
