@@ -239,6 +239,7 @@
     <ClCompile Include="Number3Get.cpp" />
     <ClCompile Include="palindrome.cpp" />
     <ClCompile Include="PassingTruck.cpp" />
+    <ClCompile Include="PhoneEncrypte.cpp" />
     <ClCompile Include="Pizza.cpp" />
     <ClCompile Include="PlusMinus.cpp" />
     <ClCompile Include="Prime.cpp" />
