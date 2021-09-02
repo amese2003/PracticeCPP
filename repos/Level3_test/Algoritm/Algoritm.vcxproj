@@ -152,6 +152,7 @@
     <ClCompile Include="bracket.cpp" />
     <ClCompile Include="Burblesort.cpp" />
     <ClCompile Include="BurbleSort2.cpp" />
+    <ClCompile Include="BuySeat.cpp" />
     <ClCompile Include="CDSum.cpp" />
     <ClCompile Include="change.cpp" />
     <ClCompile Include="ChangeWord.cpp" />
