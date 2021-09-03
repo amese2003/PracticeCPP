@@ -480,6 +480,9 @@
     <ClCompile Include="pair.cpp">
       <Filter>소스 파일\Chap_1</Filter>
     </ClCompile>
+    <ClCompile Include="Camo.cpp">
+      <Filter>소스 파일\Chap_2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
