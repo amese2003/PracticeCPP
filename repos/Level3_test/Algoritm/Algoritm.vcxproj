@@ -238,6 +238,7 @@
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
     <ClCompile Include="Number3Get.cpp" />
+    <ClCompile Include="pair.cpp" />
     <ClCompile Include="palindrome.cpp" />
     <ClCompile Include="PassingTruck.cpp" />
     <ClCompile Include="PhoneEncrypte.cpp" />
