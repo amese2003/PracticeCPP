@@ -143,6 +143,7 @@
     <ClCompile Include="Algoritm.cpp" />
     <ClCompile Include="Anagram.cpp" />
     <ClCompile Include="AngerTrigger.cpp" />
+    <ClCompile Include="Avar.cpp" />
     <ClCompile Include="BellmanFloyd.cpp" />
     <ClCompile Include="BestAlbum.cpp" />
     <ClCompile Include="BfsPractice.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="digit_sum.cpp" />
     <ClCompile Include="Dijkstar.cpp" />
     <ClCompile Include="DiskController.cpp" />
+    <ClCompile Include="DoublePrioirty.cpp" />
     <ClCompile Include="DriveTrain.cpp" />
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="EnglisgEnding.cpp" />
@@ -283,6 +285,7 @@
     <ClCompile Include="VisitLength.cpp" />
     <ClCompile Include="WorldPuzzle.cpp" />
     <ClCompile Include="xFar.cpp" />
+    <ClCompile Include="xterm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgeDelta.h" />
