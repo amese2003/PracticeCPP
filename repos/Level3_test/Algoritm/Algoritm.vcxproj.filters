@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\Chap_4">
       <UniqueIdentifier>{40d8334f-edcf-4e52-99f8-15b4cf725e9e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Private">
+      <UniqueIdentifier>{31d9fc71-c1bb-4a7d-952b-e1e70b526f97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algoritm.cpp">
@@ -483,6 +486,9 @@
     <ClCompile Include="Camo.cpp">
       <Filter>소스 파일\Chap_2</Filter>
     </ClCompile>
+    <ClCompile Include="FixedMultiStack.cpp">
+      <Filter>소스 파일\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
@@ -499,6 +505,9 @@
     </ClInclude>
     <ClInclude Include="AgeDelta.h">
       <Filter>소스 파일\Chap_1</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedMultiStack.h">
+      <Filter>소스 파일\Private</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

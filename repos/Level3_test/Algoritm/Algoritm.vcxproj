@@ -180,6 +180,7 @@
     <ClCompile Include="FarJump.cpp" />
     <ClCompile Include="FindCow.cpp" />
     <ClCompile Include="FindWayDFS.cpp" />
+    <ClCompile Include="FixedMultiStack.cpp" />
     <ClCompile Include="FloorNoise.cpp" />
     <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
@@ -296,6 +297,7 @@
     <ClInclude Include="AgeDelta.h" />
     <ClInclude Include="CDSum.h" />
     <ClInclude Include="Default.h" />
+    <ClInclude Include="FixedMultiStack.h" />
     <ClInclude Include="NatureSum.h" />
     <ClInclude Include="NtoM.h" />
   </ItemGroup>
