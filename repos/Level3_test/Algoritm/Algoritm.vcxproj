@@ -148,6 +148,7 @@
     <ClCompile Include="BestAlbum.cpp" />
     <ClCompile Include="BfsPractice.cpp" />
     <ClCompile Include="BinarySearch.cpp" />
+    <ClCompile Include="Bit.cpp" />
     <ClCompile Include="BlockStacking.cpp" />
     <ClCompile Include="bracket.cpp" />
     <ClCompile Include="Burblesort.cpp" />
