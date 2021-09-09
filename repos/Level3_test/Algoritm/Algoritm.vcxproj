@@ -142,6 +142,7 @@
     <ClCompile Include="AgeDelta.cpp" />
     <ClCompile Include="Algoritm.cpp" />
     <ClCompile Include="AllSubset.cpp" />
+    <ClCompile Include="Allsubset_combine.cpp" />
     <ClCompile Include="Anagram.cpp" />
     <ClCompile Include="AngerTrigger.cpp" />
     <ClCompile Include="Avar.cpp" />
