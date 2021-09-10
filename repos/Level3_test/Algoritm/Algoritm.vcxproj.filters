@@ -498,6 +498,9 @@
     <ClCompile Include="Allsubset_combine.cpp">
       <Filter>소스 파일\Private</Filter>
     </ClCompile>
+    <ClCompile Include="LockFreeStack.cpp">
+      <Filter>소스 파일\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
@@ -516,6 +519,9 @@
       <Filter>소스 파일\Chap_1</Filter>
     </ClInclude>
     <ClInclude Include="FixedMultiStack.h">
+      <Filter>소스 파일\Private</Filter>
+    </ClInclude>
+    <ClInclude Include="LockFreeStack.h">
       <Filter>소스 파일\Private</Filter>
     </ClInclude>
   </ItemGroup>

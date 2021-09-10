@@ -206,6 +206,7 @@
     <ClCompile Include="LionKing.cpp" />
     <ClCompile Include="LIS.cpp" />
     <ClCompile Include="LockAndKey.cpp" />
+    <ClCompile Include="LockFreeStack.cpp" />
     <ClCompile Include="LRUCache.cpp" />
     <ClCompile Include="MakeCalc.cpp" />
     <ClCompile Include="MakeHeap.cpp" />
@@ -301,6 +302,7 @@
     <ClInclude Include="CDSum.h" />
     <ClInclude Include="Default.h" />
     <ClInclude Include="FixedMultiStack.h" />
+    <ClInclude Include="LockFreeStack.h" />
     <ClInclude Include="NatureSum.h" />
     <ClInclude Include="NtoM.h" />
   </ItemGroup>
