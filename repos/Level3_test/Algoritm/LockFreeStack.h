@@ -74,11 +74,10 @@ public:
 
 		while (_pendingList.compare_exchange_weak(last->next, first) == false)
 		{
-
 		}
 	}
 
-	void ChainPendingNode(Node* node)
+	void ChainPendingNodeList(Node* node)
 	{
 		Node* last = node;
 		while (last->next)
