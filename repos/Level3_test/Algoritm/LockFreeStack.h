@@ -4,33 +4,66 @@
 template<typename T>
 class LockFreeStack
 {
+	struct Node;
+
+	struct CountedNodePtr
+	{
+		int32 externalCount = 0;
+		Node* ptr = nullptr;
+	};
+
 	struct Node
 	{
-		Node(const T& value) : data(value), next(nullptr) {};
+		Node(const T& value) : data(make_shared<T>(value)) {}
 
-		T data;
-		Node* next;
+		shared_ptr<T> data;
+		atomic<int32> internalCount = 0;
+		CountedNodePtr next;
 	};
 
 public:
 	void Push(const T& value)
 	{
-		Node* node = new Node(value);
-		node->Next = _head;
+		CountedNodePtr node;
+		node.ptr = new Node(value);
+		node.externalCount = 1;
+		// [1]
+		node.ptr->next = _head;
 		
-		while (_head.compare_exchange_weak(node->next, node) == false)
+		while (_head.compare_exchange_weak(node.ptr->next, node) == false)
 		{
 
 		}
 	}
 
-	bool TryPop(T& value)
+	shared_ptr<T> TryPop()
 	{
-		++_popCount;
-		Node* oldHead = _head;
+		CountedNodePtr oldHead = _head;
 
-		while (oldHead && _head.compare_exchange_weak(oldHead, oldHead->next) == false)
+		while (true)
 		{
+
+			IncreaseHeadCount(oldHead);
+			Node* ptr = oldHead.ptr;
+
+			if (ptr == nullptr)
+				return shared_ptr<T>();
+
+			if (_head.compare_exchange_strong(oldHead, ptr->next))
+			{
+				shared_ptr<T> res;
+				res.swap(ptr->data);
+
+				const int32 countincrease = oldHead.externalCount - 2;
+				if (ptr->internalCount.fetch_add(countincrease) == -countincrease)
+					delete ptr;
+
+				return res;
+			}
+			else if (ptr->internalCount.fetch_sub(1) == 1)
+			{
+				delete ptr;
+			}
 
 		}
 
@@ -45,65 +78,23 @@ public:
 		return true;
 	}
 
-	void TryDelete(Node* oldHead)
-	{
-		if (_popCount == 1) {
-			Node* node = _pendingList.exchange(nullptr);
-
-			if (--_popCount == 0)
-			{
-				DeleteNodes(node);
-			}
-			else if (node)
-			{
-				ChainPendingNodeList(node);
-			}
-
-			delete oldHead;
-		}
-		else
-		{
-			ChainPendingNode(oldHead);
-			--_popCount;
-		}
-	}
-
-	void ChainPendingNodeList(Node* first, Node* last)
-	{
-		last->next = _pendingList;
-
-		while (_pendingList.compare_exchange_weak(last->next, first) == false)
-		{
-		}
-	}
-
-	void ChainPendingNodeList(Node* node)
-	{
-		Node* last = node;
-		while (last->next)
-			last = last->next;
-
-		ChainPendingNodeList(node, last);
-	}
-
-	void ChainPendingNode(Node* node)
-	{
-		ChainPendingNodeList(node, node);
-	}
-
-	static void DeleteNodes(Node* node)
-	{
-		while (node)
-		{
-			Node* next = node->next;
-			delete node;
-			node = next;
-		}
-	}
 private:
-	atomic<Node*> _head;
+	void IncreaseHeadCount(CountedNodePtr& oldCounter)
+	{
+		while (true)
+		{
+			CountedNodePtr newCounter = oldCounter;
+			newCounter.externalCount++;
 
-	atomic<uint32> _popCount = 0;
-	atomic<Node*> _pendingList;
+			if (_head.compare_exchange_strong(oldCounter, newCounter))
+			{
+				oldCounter.externalCount = newCounter.externalCount;
+				break;
+			}
+		}
+	}
+
+private:
+	atomic<CountedNodePtr> _head;
 };
 
