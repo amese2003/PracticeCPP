@@ -504,6 +504,9 @@
     <ClCompile Include="FillField.cpp">
       <Filter>소스 파일\Private</Filter>
     </ClCompile>
+    <ClCompile Include="Atomic.cpp">
+      <Filter>소스 파일\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">

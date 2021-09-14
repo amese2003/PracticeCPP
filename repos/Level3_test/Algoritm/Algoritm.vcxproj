@@ -186,6 +186,7 @@
     <ClCompile Include="FindWayDFS.cpp" />
     <ClCompile Include="FixedMultiStack.cpp" />
     <ClCompile Include="FloorNoise.cpp" />
+    <ClCompile Include="Atomic.cpp" />
     <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
     <ClCompile Include="GetRank.cpp" />
