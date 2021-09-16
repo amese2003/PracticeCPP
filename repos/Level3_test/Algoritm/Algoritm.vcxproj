@@ -189,6 +189,7 @@
     <ClCompile Include="Atomic.cpp" />
     <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
+    <ClCompile Include="GetPath.cpp" />
     <ClCompile Include="GetRank.cpp" />
     <ClCompile Include="Harshad.cpp" />
     <ClCompile Include="HorseHouse.cpp" />
