@@ -290,6 +290,7 @@
     <ClCompile Include="total_num_large.cpp" />
     <ClCompile Include="total_num_small.cpp" />
     <ClCompile Include="TravelPort.cpp" />
+    <ClCompile Include="Trie.cpp" />
     <ClCompile Include="TripleStep.cpp" />
     <ClCompile Include="TruckPass.cpp" />
     <ClCompile Include="UglyNumber.cpp" />
