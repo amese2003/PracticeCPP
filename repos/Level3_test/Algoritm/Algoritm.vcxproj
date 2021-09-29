@@ -203,6 +203,7 @@
     <ClCompile Include="JwelShopping.cpp" />
     <ClCompile Include="KakaoDrone.cpp" />
     <ClCompile Include="Kakao_StringZip.cpp" />
+    <ClCompile Include="KartRider.cpp" />
     <ClCompile Include="KConvert.cpp" />
     <ClCompile Include="Kruskal.cpp" />
     <ClCompile Include="lastpoint.cpp" />

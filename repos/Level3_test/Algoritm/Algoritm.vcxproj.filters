@@ -516,6 +516,15 @@
     <ClCompile Include="Trie.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="lastpoint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="빙고.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KartRider.cpp">
+      <Filter>소스 파일\Chap_4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
