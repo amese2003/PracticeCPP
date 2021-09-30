@@ -181,6 +181,7 @@
     <ClCompile Include="EnglishWord.cpp" />
     <ClCompile Include="Failure.cpp" />
     <ClCompile Include="FarJump.cpp" />
+    <ClCompile Include="FileSort.cpp" />
     <ClCompile Include="FillField.cpp" />
     <ClCompile Include="FindCow.cpp" />
     <ClCompile Include="FindWayDFS.cpp" />
