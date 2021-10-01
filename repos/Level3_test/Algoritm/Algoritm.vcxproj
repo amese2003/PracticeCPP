@@ -270,6 +270,7 @@
     <ClCompile Include="RecursivePractice.cpp" />
     <ClCompile Include="ReversePrime.cpp" />
     <ClCompile Include="RockPaper.cpp" />
+    <ClCompile Include="RotateVector.cpp" />
     <ClCompile Include="SameDFS.cpp" />
     <ClCompile Include="Scovill.cpp" />
     <ClCompile Include="SecretMap.cpp" />
