@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="AgeDelta.cpp" />
     <ClCompile Include="Algoritm.cpp" />
+    <ClCompile Include="AllSubset.cpp" />
+    <ClCompile Include="Allsubset_combine.cpp" />
     <ClCompile Include="Anagram.cpp" />
     <ClCompile Include="AngerTrigger.cpp" />
     <ClCompile Include="Avar.cpp" />
@@ -148,10 +150,13 @@
     <ClCompile Include="BestAlbum.cpp" />
     <ClCompile Include="BfsPractice.cpp" />
     <ClCompile Include="BinarySearch.cpp" />
+    <ClCompile Include="Bit.cpp" />
     <ClCompile Include="BlockStacking.cpp" />
     <ClCompile Include="bracket.cpp" />
     <ClCompile Include="Burblesort.cpp" />
     <ClCompile Include="BurbleSort2.cpp" />
+    <ClCompile Include="BuySeat.cpp" />
+    <ClCompile Include="Camo.cpp" />
     <ClCompile Include="CDSum.cpp" />
     <ClCompile Include="change.cpp" />
     <ClCompile Include="ChangeWord.cpp" />
@@ -176,11 +181,15 @@
     <ClCompile Include="EnglishWord.cpp" />
     <ClCompile Include="Failure.cpp" />
     <ClCompile Include="FarJump.cpp" />
+    <ClCompile Include="FillField.cpp" />
     <ClCompile Include="FindCow.cpp" />
     <ClCompile Include="FindWayDFS.cpp" />
+    <ClCompile Include="FixedMultiStack.cpp" />
     <ClCompile Include="FloorNoise.cpp" />
+    <ClCompile Include="Atomic.cpp" />
     <ClCompile Include="GetAvar.cpp" />
     <ClCompile Include="GetElementWeight.cpp" />
+    <ClCompile Include="GetPath.cpp" />
     <ClCompile Include="GetRank.cpp" />
     <ClCompile Include="Harshad.cpp" />
     <ClCompile Include="HorseHouse.cpp" />
@@ -192,6 +201,7 @@
     <ClCompile Include="InversionSequence.cpp" />
     <ClCompile Include="JollyJumper.cpp" />
     <ClCompile Include="JwelShopping.cpp" />
+    <ClCompile Include="KakaoDrone.cpp" />
     <ClCompile Include="Kakao_StringZip.cpp" />
     <ClCompile Include="KConvert.cpp" />
     <ClCompile Include="Kruskal.cpp" />
@@ -201,6 +211,7 @@
     <ClCompile Include="LionKing.cpp" />
     <ClCompile Include="LIS.cpp" />
     <ClCompile Include="LockAndKey.cpp" />
+    <ClCompile Include="LockFreeStack.cpp" />
     <ClCompile Include="LRUCache.cpp" />
     <ClCompile Include="MakeCalc.cpp" />
     <ClCompile Include="MakeHeap.cpp" />
@@ -238,9 +249,12 @@
     <ClCompile Include="NtoM.cpp" />
     <ClCompile Include="AgeDelta2.cpp" />
     <ClCompile Include="Number3Get.cpp" />
+    <ClCompile Include="pair.cpp" />
     <ClCompile Include="palindrome.cpp" />
     <ClCompile Include="PassingTruck.cpp" />
+    <ClCompile Include="PhoneEncrypte.cpp" />
     <ClCompile Include="Pizza.cpp" />
+    <ClCompile Include="PlusMinus.cpp" />
     <ClCompile Include="Prime.cpp" />
     <ClCompile Include="PrimeCount.cpp" />
     <ClCompile Include="Princess.cpp" />
@@ -261,6 +275,7 @@
     <ClCompile Include="ShortMiro.cpp" />
     <ClCompile Include="ShortWay.cpp" />
     <ClCompile Include="SkillTree.cpp" />
+    <ClCompile Include="Snail.cpp" />
     <ClCompile Include="SportWear.cpp" />
     <ClCompile Include="Stairs.cpp" />
     <ClCompile Include="StationSet.cpp" />
@@ -276,6 +291,7 @@
     <ClCompile Include="total_num_large.cpp" />
     <ClCompile Include="total_num_small.cpp" />
     <ClCompile Include="TravelPort.cpp" />
+    <ClCompile Include="Trie.cpp" />
     <ClCompile Include="TripleStep.cpp" />
     <ClCompile Include="TruckPass.cpp" />
     <ClCompile Include="UglyNumber.cpp" />
@@ -283,6 +299,7 @@
     <ClCompile Include="UnionFind.cpp" />
     <ClCompile Include="UseTrie.cpp" />
     <ClCompile Include="VisitLength.cpp" />
+    <ClCompile Include="WorldPuzzle.cpp" />
     <ClCompile Include="xFar.cpp" />
     <ClCompile Include="xterm.cpp" />
     <ClCompile Include="빙고.cpp" />
@@ -291,8 +308,13 @@
     <ClInclude Include="AgeDelta.h" />
     <ClInclude Include="CDSum.h" />
     <ClInclude Include="Default.h" />
+    <ClInclude Include="FixedMultiStack.h" />
+    <ClInclude Include="LockFreeStack.h" />
     <ClInclude Include="NatureSum.h" />
     <ClInclude Include="NtoM.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sticker.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
