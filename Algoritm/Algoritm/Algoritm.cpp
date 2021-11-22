@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -10,23 +11,23 @@ struct Vertex
 
 vector<Vertex> vertices;
 vector<vector<int>> adjacent;
-vector<bool> visited;
+vector<bool> discovered;
 
 void CreateGraph()
 {
 	vertices.resize(6);
 	adjacent = vector<vector<int>>(6);
 
-	/*adjacent[0].push_back(1);
+	adjacent[0].push_back(1);
 	adjacent[0].push_back(3);
 	adjacent[1].push_back(0);
 	adjacent[1].push_back(2);
 	adjacent[1].push_back(3);
 	adjacent[3].push_back(4);
-	adjacent[5].push_back(4);*/
+	adjacent[5].push_back(4);
 
 
-	adjacent = vector<vector<int>>
+	/*adjacent = vector<vector<int>>
 	{
 		{0,1,0,1,0,0},
 		{1,0,1,1,0,0},
@@ -34,51 +35,63 @@ void CreateGraph()
 		{0,0,0,0,0,0},
 		{0,0,0,0,0,0},
 		{0,0,0,0,1,0}
-	};
+	};*/
 
 }
 
-void Dfs(int here)
+void Bfs(int here)
 {
-	visited[here] = true;
+	vector<int> parent(6, -1);
+	vector<int> distance(6, -1);
 
-	cout << "visited : " << here << endl;
+	queue<int> q;
+	q.push(here);
+	discovered[here] = true;
 
-	/*for (int i = 0; i < adjacent[here].size(); i++)
+	parent[here] = here;
+	distance[here] = 0;
+
+	while (q.empty() == false)
 	{
-		int there = adjacent[here][i];
+		here = q.front();
+		q.pop();
 
-		if (visited[there] == false)
-			Dfs(there);
-	}*/
+		cout << "Visited : " << here << endl;
 
+		for (int there : adjacent[here])
+		{
+			if (discovered[there])
+				continue;
 
-	for (int there = 0; there < 6; there++)
-	{
-		if (adjacent[here][there] == 0)
-			continue;
+			q.push(there);
+			discovered[there] = true;
 
-		if (visited[there] == false)
-			Dfs(there);
+			parent[there] = here;
+			distance[there] = distance[here] + 1;
+		}
+
 	}
 
 }
 
-void DfsAll()
+void BfsAll()
 {
-	visited = vector<bool>(6, false);
-
 	for (int i = 0; i < 6; i++)
-		if (visited[i] == false)
-			Dfs(i);
+		if (discovered[i] == false)
+			Bfs(i);
 }
+
 
 int main()
 {
 	CreateGraph();
 
+	discovered = vector<bool>(6, false);
 	
+	queue<int> test;
+	test.push(1);
 
-	DfsAll();
+	Bfs(0);
 
+	return 0;
 }
