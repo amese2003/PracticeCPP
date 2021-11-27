@@ -8,15 +8,17 @@ void Player::Init(Board* board)
 	_pos = board->GetEnterPos();
 	_board = board;
 
-	Bfs();
-
-	
+	AStar();
 }
 
 void Player::Update(uint64 deltaTick)
 {
 	if (_pathIndex >= _path.size())
+	{
+		_board->GenerateMap();
+		Init(_board);
 		return;
+	}
 
 	_sumTick += deltaTick;
 
@@ -177,4 +179,130 @@ void Player::Bfs()
 	::reverse(_path.begin(), _path.end());
 
 	_path.push_back(pos);
+}
+
+struct PQNode
+{
+	bool operator<(const PQNode& other) const { return f < other.f; }
+	bool operator>(const PQNode& other) const { return f > other.f; }
+
+	int32		f;
+	int32		g;
+	Pos			pos;
+};
+
+void Player::AStar()
+{
+	// 점수 매기기
+	// F = G + H
+	// F = 최종 점수 (작을 수록 좋음.)
+	// G = 시작점에서 해당 좌표까지 이동하는데 드는 비용
+	// H = 목적지에서 얼마나 가까울지
+
+	Pos start = _pos;
+	Pos dest = _board->GetExitPos();
+
+	enum
+	{
+		DIR_COUNT = 8
+	};
+
+	Pos front[] =
+	{
+		Pos { -1, 0 },		// UP
+		Pos { 0, -1 },		// LEFT
+		Pos { 1, 0 },		// DOWN
+		Pos { 0, 1 },		// RIGHT
+		Pos { -1, -1 },		// UP_LEFT
+		Pos { 1, -1 },		// DOWN_LEFT
+		Pos { 1, 1 },		//DOWN_RIGHT
+		Pos { -1, 1 }		// UP_RIGHT
+	};
+
+	int32 cost[] =
+	{
+		10,			// UP
+		10,			// LEFT
+		10,			// DOWN
+		10,			// RIGHT
+		14,			// UP_LEFT
+		14,			// DOWN_LEFT
+		14,			//DOWN_RIGHT
+		14			// UP_RIGHT
+	};
+
+	const int32 size = _board->GetSize();
+
+	vector<vector<bool>> closed(size, vector<bool>(size, false));
+
+	vector<vector<int32>> best(size, vector<int32>(size, INT32_MAX));
+
+	map<Pos, Pos> parent;
+	priority_queue<PQNode, vector<PQNode>, greater<PQNode>> pq;
+
+	// 초기값
+	{
+		int32 g = 0;
+		int32 h = 10 * (abs(dest.y - start.y) + abs(dest.x - start.x));
+		pq.push(PQNode{ g + h, g, start });
+		best[start.y][start.x] = g + h;
+		parent[start] = start;
+	}
+
+	while (pq.empty() == false)
+	{
+		PQNode node = pq.top();
+		pq.pop();
+
+		// 동일한 좌표를 여러 경로로 찾아서
+		// 더 빠른 경로로 인해서 이미 방문되면 스킵
+
+		if (closed[node.pos.y][node.pos.x])
+			continue;
+		if (best[node.pos.y][node.pos.x] < node.f)
+			continue;
+
+		closed[node.pos.y][node.pos.x] = true;
+
+		if (node.pos == dest)
+			break;
+
+		for (int32 dir = 0; dir < DIR_COUNT; dir++)
+		{
+			Pos nextPos = node.pos + front[dir];
+
+			if (CanGo(nextPos) == false)
+				continue;
+
+			if (closed[nextPos.y][nextPos.x])
+				continue;
+
+			int32 g = node.g + cost[dir];
+			int32 h = 10 * (abs(dest.y - nextPos.y) + abs(dest.x - nextPos.x));
+
+			if (best[nextPos.y][nextPos.x] <= g + h)
+				continue;
+
+			best[nextPos.y][nextPos.x] = g + h;
+			pq.push(PQNode{ g + h, g, nextPos });
+			parent[nextPos] = node.pos;
+		}
+	}
+
+	Pos pos = dest;
+
+	_path.clear();
+	_pathIndex = 0;
+
+	while (true)
+	{
+		_path.push_back(pos);
+
+		if (pos == parent[pos])
+			break;
+
+		pos = parent[pos];
+	}
+
+	::reverse(_path.begin(), _path.end());
 }
