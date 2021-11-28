@@ -2,47 +2,29 @@
 #include <vector>
 #include <queue>
 #include <list>
+#include "BinarySearchTree.h"
 
 using namespace std;
 
 // 오늘의 주제 : 이진 탐색 트리
 
-// binary search
-
-vector<int> numbers;
-void BinarySearch(int N)
-{
-	int left = 0;
-	int right = (int)numbers.size() - 1;
-
-	while (left <= right)
-	{
-		int mid = (left + right) / 2;
-
-		if (N < numbers[mid])
-		{
-			cout << N << " < " << numbers[mid] << endl;
-			right = mid - 1;
-		}
-		else if (N > numbers[mid])
-		{
-			cout << N << " > " << numbers[mid] << endl;
-			left = mid + 1;
-		}
-		else
-		{
-			cout << "찾았다!" << endl;
-			break;
-		}
-	}
-
-	cout << "몰?루" << endl;
-}
 
 int main()
 {
+	BinarySearchTree bst;
 
-	numbers = vector<int>{ 1,8,15,23,32,44,56,63,81,91 };
-	BinarySearch(82);
+	bst.insert(20);
+	bst.insert(10);
+	bst.insert(30);
+	bst.insert(25);
+	bst.insert(26);
+	bst.insert(40);
+	bst.insert(50);
+
+	bst.Delete(20);
+	bst.Delete(26);
+
+	bst.Print();
+
 	return 0;
 }
