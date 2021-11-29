@@ -3,6 +3,7 @@
 #include <queue>
 #include <list>
 #include "BinarySearchTree.h"
+#include <thread>
 
 using namespace std;
 
@@ -13,16 +14,30 @@ int main()
 {
 	BinarySearchTree bst;
 
-	bst.insert(20);
-	bst.insert(10);
 	bst.insert(30);
-	bst.insert(25);
-	bst.insert(26);
-	bst.insert(40);
-	bst.insert(50);
+	bst.Print();
+	this_thread::sleep_for(1s);
 
-	bst.Delete(20);
-	bst.Delete(26);
+	bst.insert(10);
+	bst.Print();
+	this_thread::sleep_for(1s);
+
+	bst.insert(20);
+	bst.Print();
+	this_thread::sleep_for(1s);
+
+	bst.insert(25);
+	bst.Print();
+	this_thread::sleep_for(1s);
+
+	bst.insert(40);
+	bst.Print();
+	this_thread::sleep_for(1s);
+
+	bst.insert(50);
+	bst.Print();
+	this_thread::sleep_for(1s);
+
 
 	bst.Print();
 
