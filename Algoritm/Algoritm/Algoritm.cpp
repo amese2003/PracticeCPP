@@ -71,14 +71,92 @@ void InsertionSort(vector<int>& v)
 	}
 }
    
+void HeapSort(vector<int>& v)
+{
+	priority_queue<int, vector<int>, greater<int>> pq;
+
+	for (int num : v)
+		pq.push(num);
+
+	v.clear();
+
+	while (pq.empty() == false)
+	{
+		v.push_back(pq.top());;
+		pq.pop();
+	}
+}
+
+void MergeResult(vector<int>& v, int left, int mid, int right)
+{
+	int leftidx = left;
+	int rightidx = mid + 1;
+
+	vector<int> res;
+
+	while (leftidx <= mid && rightidx <= right)
+	{
+		if (v[leftidx] <= v[rightidx])
+		{
+			res.push_back(v[leftidx]);
+			leftidx++;
+		}
+		else
+		{
+			res.push_back(v[rightidx]);
+			rightidx++;
+		}
+	}
+
+	if (leftidx > mid)
+	{
+		while (rightidx <= right)
+		{
+			res.push_back(v[rightidx]);
+			rightidx++;
+		}
+	}
+	else 
+	{
+		while (leftidx <= mid)
+		{
+			res.push_back(v[leftidx]);
+			leftidx++;
+		}
+	}
+
+
+	for (int i = 0; i < res.size(); i++)
+		v[left + i] = res[i];
+	
+
+}
+
+void MergeSort(vector<int>& v, int left, int right) 
+{
+	if (left >= right)
+		return;
+
+	int mid = (left + right) / 2;
+	MergeSort(v, left, mid);
+	MergeSort(v, mid + 1, right);
+
+	MergeResult(v, left, mid, right);
+}
 
 
 int main()
 {
-	vector<int> v{ 1,5,3,4,2 };
+	vector<int> v;
+	srand(time(0));
 
+	for (int i = 0; i < 50; i++)
+	{
+		int randValue = rand() % 100;
+		v.push_back(randValue);
+	}
 
-	InsertionSort(v);
+	MergeSort(v, 0, v.size() - 1);
 
 	return 0;
 }
