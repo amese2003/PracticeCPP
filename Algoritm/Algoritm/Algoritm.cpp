@@ -7,189 +7,104 @@
 
 using namespace std;
 
-// 오늘의 주제 : 이진 탐색 트리
 
-void BubbleSort(vector<int>& v)
+// map : Red-Black Tree
+// - 추가 / 탐색 / 삭제 O(logN)
+
+// unordered_map
+// - 추가 / 탐색 / 삭제 O(1)
+
+// 메모리를 내주고 속도를 취한다
+
+void TestTable()
 {
-	const int n = v.size();
-
-	for (int i = 0; i < n - 1; i++)
+	struct User
 	{
-		for (int j = 1; j < n - 1 - i; j++)
-		{
-			if (v[j] > v[j + 1])
-			{
-				int temp = v[i];
-				v[j] = v[j + 1];
-				v[j + 1] = temp;
-			}
-		}
-	}
-}
+		int userid = 0;
+		string username;
+	};
 
-void SelectionSort(vector<int>& v)
-{
-	const int n = v.size();
+	vector<User> users;
+	users.resize(1000);
 
-	for (int i = 0; i < n - 1; i++)
-	{
-		int bestidx = i;
+	users[777] = User{ 777, "test" };
+	string name = users[777].username;
 
-		for (int j = i + 1; j < n; j++)
-		{
-			if (v[j] < v[bestidx])
-			{
-				bestidx = j;
-			}
-		}
+	cout << name << endl;
 
-		int temp = v[i];
-		v[i] = v[bestidx];
-		v[bestidx] = temp;
-	}
+	// 살을 내주는 것도 정도것 해야지...
 
 }
 
-void InsertionSort(vector<int>& v) 
+void TestHash()
 {
-	const int n = v.size();
-
-	for (int i = 1; i < n; i++)
+	struct User
 	{
-		int insertData = v[i];
+		int userid = 0; // 1 ~ int64_maxs
+		string username;
+	};
 
-		int j;
-		for (j = i - 1; j >= 0; j--)
-		{
-			if (v[i] > insertData)
-				v[j + 1] = v[j];
-			else
-				break;
-		}
+	vector<User> users;
+	users.resize(1000);
 
-		v[j + 1] = insertData;
-	}
-}
-   
-void HeapSort(vector<int>& v)
-{
-	priority_queue<int, vector<int>, greater<int>> pq;
-
-	for (int num : v)
-		pq.push(num);
-
-	v.clear();
-
-	while (pq.empty() == false)
-	{
-		v.push_back(pq.top());;
-		pq.pop();
-	}
-}
-
-void MergeResult(vector<int>& v, int left, int mid, int right)
-{
-	int leftidx = left;
-	int rightidx = mid + 1;
-
-	vector<int> res;
-
-	while (leftidx <= mid && rightidx <= right)
-	{
-		if (v[leftidx] <= v[rightidx])
-		{
-			res.push_back(v[leftidx]);
-			leftidx++;
-		}
-		else
-		{
-			res.push_back(v[rightidx]);
-			rightidx++;
-		}
-	}
-
-	if (leftidx > mid)
-	{
-		while (rightidx <= right)
-		{
-			res.push_back(v[rightidx]);
-			rightidx++;
-		}
-	}
-	else 
-	{
-		while (leftidx <= mid)
-		{
-			res.push_back(v[leftidx]);
-			leftidx++;
-		}
-	}
+	const int userid = 123456789;
+	int key = (userid % 1000);
 
 
-	for (int i = 0; i < res.size(); i++)
-		v[left + i] = res[i];
+	users[key] = User{ userid, "test" };
 	
 
-}
+	User& user = users[key];
 
-void MergeSort(vector<int>& v, int left, int right) 
-{
-	if (left >= right)
-		return;
-
-	int mid = (left + right) / 2;
-	MergeSort(v, left, mid);
-	MergeSort(v, mid + 1, right);
-
-	MergeResult(v, left, mid, right);
-}
-
-int Partition(vector<int>& v, int left, int right)
-{
-	int pivot = v[left];
-	int low = left + 1;
-	int high = right;
-
-	while (low <= high)
+	if (user.userid == userid)
 	{
-		while (low <= right && pivot >= v[low])
-			low++;
-
-		while (high >= left + 1 &&pivot <= v[high])
-			high--;
-
-		if (low < high)
-			swap(v[low], v[high]);
+		string name = user.username;
+		cout << name << endl;
 	}
 
-	swap(v[left], v[high]);
-	return high;
+	// 충돌문제
+
+	// 선형조사법 (linear probing)
+	// 	   hash(key) + 1 -> hash(key) + 2 -> ......
+	// 이차 조사법
+	//     hash(key) + 1 ^ 2 -> hash(key) + 2 ^ 2 -> ....
+
+	// 체이닝
+
 }
 
-void QuickSort(vector < int>& v, int left, int right)
+void TestHashTableChaining()
 {
-	if (left > right)
-		return;
+	struct User
+	{
+		int userid = 0; // 1 ~ int64_maxs
+		string username;
+	};
+	vector<vector<User>> users;
+	users.resize(1000);
 
-	int pivot = Partition(v, left, right);
-	QuickSort(v, left, pivot - 1);
-	QuickSort(v, pivot + 1, right);
-	
+
+	const int userid = 123456789;
+	int key = (userid % 1000);
+
+
+	users[key].push_back(User{ userid, "test" });
+
+	vector<User>& bucket = users[key];
+
+	for (User& user : bucket)
+	{
+		if (user.userid == userid)
+		{
+			string name = user.username;
+			cout << name << endl;
+		}
+	}
+
 }
-
 
 int main()
 {
-	vector<int> v;
-	srand(time(0));
-
-	for (int i = 0; i < 50; i++)
-	{
-		int randValue = rand() % 100;
-		v.push_back(randValue);
-	}
-
-	QuickSort(v, 0, v.size() - 1);
-
+	TestHashTableChaining();
 	return 0;
 }
