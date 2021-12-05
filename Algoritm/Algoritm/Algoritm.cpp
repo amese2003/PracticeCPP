@@ -7,104 +7,98 @@
 
 using namespace std;
 
+// 오늘의 주제 : 최소 스패닝 트리
 
-// map : Red-Black Tree
-// - 추가 / 탐색 / 삭제 O(logN)
+// 상호 베타적 집합 (Disjoint Set)
+// -> Union-Find (합치기 - 찾기)
 
-// unordered_map
-// - 추가 / 탐색 / 삭제 O(1)
-
-// 메모리를 내주고 속도를 취한다
-
-void TestTable()
+class NaiveDisjointSet
 {
-	struct User
+public:
+	NaiveDisjointSet(int n) : _parent(n)
 	{
-		int userid = 0;
-		string username;
-	};
-
-	vector<User> users;
-	users.resize(1000);
-
-	users[777] = User{ 777, "test" };
-	string name = users[777].username;
-
-	cout << name << endl;
-
-	// 살을 내주는 것도 정도것 해야지...
-
-}
-
-void TestHash()
-{
-	struct User
-	{
-		int userid = 0; // 1 ~ int64_maxs
-		string username;
-	};
-
-	vector<User> users;
-	users.resize(1000);
-
-	const int userid = 123456789;
-	int key = (userid % 1000);
-
-
-	users[key] = User{ userid, "test" };
-	
-
-	User& user = users[key];
-
-	if (user.userid == userid)
-	{
-		string name = user.username;
-		cout << name << endl;
+		for (int i = 0; i < n; i++)
+			_parent[i] = i;
 	}
 
-	// 충돌문제
-
-	// 선형조사법 (linear probing)
-	// 	   hash(key) + 1 -> hash(key) + 2 -> ......
-	// 이차 조사법
-	//     hash(key) + 1 ^ 2 -> hash(key) + 2 ^ 2 -> ....
-
-	// 체이닝
-
-}
-
-void TestHashTableChaining()
-{
-	struct User
+	int Find(int u)
 	{
-		int userid = 0; // 1 ~ int64_maxs
-		string username;
-	};
-	vector<vector<User>> users;
-	users.resize(1000);
+		if (u == _parent[u])
+			return u;
 
-
-	const int userid = 123456789;
-	int key = (userid % 1000);
-
-
-	users[key].push_back(User{ userid, "test" });
-
-	vector<User>& bucket = users[key];
-
-	for (User& user : bucket)
-	{
-		if (user.userid == userid)
-		{
-			string name = user.username;
-			cout << name << endl;
-		}
+		return Find(_parent[u]);
 	}
 
-}
+	void Merge(int u, int v)
+	{
+		u = Find(u);
+		v = Find(v);
+
+		if (u == v)
+			return;
+
+		_parent[u] = v;
+	}
+
+private:
+	vector<int> _parent;
+};
+
+// (Union-By-Rank)
+
+class DisjointSet
+{
+public:
+	DisjointSet(int n) : _parent(n), _rank(n, 1)
+	{
+		for (int i = 0; i < n; i++)
+			_parent[i] = i;
+	}
+
+	int Find(int u)
+	{
+		if (u == _parent[u])
+			return u;
+
+		return _parent[u] = Find(_parent[u]);
+	}
+
+	void Merge(int u, int v)
+	{
+		u = Find(u);
+		v = Find(v);
+
+		if (u == v)
+			return;
+
+		if (_rank[u] > _rank[v])
+			::swap(u, v);
+
+		//_rank[u] <= _rank[v]
+		_parent[u] = v;
+
+		if (_rank[u] == _rank[v])
+			_rank[v]++;
+	}
+
+private:
+	vector<int> _parent;
+	vector<int> _rank;
+};
 
 int main()
 {
-	TestHashTableChaining();
+	DisjointSet teams(1000);
+
+	teams.Merge(10, 1);
+
+	int teamId = teams.Find(1);
+	int teamId2 = teams.Find(10);
+
+	teams.Merge(1, 3);
+
+	int teamId3 = teams.Find(1);
+	int teamId4 = teams.Find(3);
+
 	return 0;
 }
