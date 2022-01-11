@@ -7,13 +7,15 @@
 #include <Windows.h>
 #include <future>
 #include "LockFreeStack.h"
+#include "LockFreeQueue.h"
 
+LockFreeQueue<int32> q;
 LockFreeStack<int32> s;
 
 void Push() {
 	while (true) {
 		int32 value = rand() & 100;
-		s.Push(value);
+		q.Push(value);
 
 		//this_thread::sleep_for(10ms);
 	}
@@ -21,7 +23,7 @@ void Push() {
 
 void Pop() {
 	while (true) {
-		auto data = s.TryPop();
+		auto data = q.TryPop();
 
 		if (data != nullptr)
 			cout << (*data) << endl;
