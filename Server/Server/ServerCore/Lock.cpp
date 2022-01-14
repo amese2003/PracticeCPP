@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Lock.h"
 
-void Lock::WriteLock()
+void Lock::WriteLock(const char* name)
 {
 	const uint32 lockThreadId = (_lockFlag.load() & WRITE_THREAD_MASK) >> 16;
 
@@ -34,7 +34,7 @@ void Lock::WriteLock()
 
 }
 
-void Lock::WriteUnlock()
+void Lock::WriteUnlock(const char* name)
 {
 	if ((_lockFlag.load() & READ_COUNT_MASK) != 0)
 		CRASH("INVALID_UNLOCK_ORDER");
@@ -45,7 +45,7 @@ void Lock::WriteUnlock()
 
 }
 
-void Lock::ReadLock()
+void Lock::ReadLock(const char* name)
 {
 	const uint32 lockThreadId = (_lockFlag.load() & WRITE_THREAD_MASK) >> 16;
 
@@ -75,7 +75,7 @@ void Lock::ReadLock()
 
 }
 
-void Lock::ReadUnlock()
+void Lock::ReadUnlock(const char* name)
 {
 	if ((_lockFlag.fetch_sub(1) & READ_COUNT_MASK) == 0)
 		CRASH("MULTIPLE_UNLOCK");
