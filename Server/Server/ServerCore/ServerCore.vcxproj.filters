@@ -51,6 +51,7 @@
     <ClInclude Include="Allocator.h">
       <Filter>Memory</Filter>
     </ClInclude>
+    <ClInclude Include="RefCounting.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -86,5 +87,6 @@
     <ClCompile Include="Memory.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
+    <ClCompile Include="RefCounting.cpp" />
   </ItemGroup>
 </Project>
