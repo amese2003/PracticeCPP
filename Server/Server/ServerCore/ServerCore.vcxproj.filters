@@ -52,6 +52,7 @@
       <Filter>Memory</Filter>
     </ClInclude>
     <ClInclude Include="RefCounting.h" />
+    <ClInclude Include="DeadLockProfiler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -88,5 +89,6 @@
       <Filter>Memory</Filter>
     </ClCompile>
     <ClCompile Include="RefCounting.cpp" />
+    <ClCompile Include="DeadLockProfiler.cpp" />
   </ItemGroup>
 </Project>

@@ -6,101 +6,66 @@
 #include <windows.h>
 #include <future>
 #include "ThreadManager.h"
-
+#include "RefCounting.h";
 #include "Memory.h"
 
-using TL = TypeList<class Player, class Mage, class Knight, class Archer>;
+#pragma once
 
-class Player
+//using KnightRef = TSharedPtr<class Knight>;
+using KnightRef = shared_ptr<class Knight>;
+
+class Knight
 {
 public:
-	Player()
+	Knight()
 	{
-		INIT_TL(Player);
+		cout << "Knight()" << endl;
 	}
-	virtual ~Player() { }
 
-	DECLARE_TL
+	~Knight()
+	{
+		cout << "~Knight()" << endl;
+	}
+
+	void SetTarget(KnightRef target)
+	{
+		_target = target;
+	}
+
+	KnightRef _target = nullptr;
 };
 
-class Knight : public Player
-{
-public:
-	Knight() { INIT_TL(Knight); }
-};
 
-class Mage : public Player
-{
-
-public:
-	Mage() { INIT_TL(Mage); }
-};
-
-class Archer : public Player
-{
-
-public:
-	Archer() { INIT_TL(Archer) }
-};
-
-class Dog
-{
-
-};
 
 int main()
 {
-	//TypeList<Mage, Knight>::Head whoAMI;
-	//TypeList<Mage, Knight>::Tail whoAMI2;
-
-	//TypeList<Mage, TypeList<Knight, Archer>>::Head whoAMI3;
-	//TypeList<Mage, TypeList<Knight, Archer>>::Tail::Head whoAMI4;
-	//TypeList<Mage, TypeList<Knight, Archer>>::Tail::Tail whoAMI5;
-
-	//int32 len1 = Length<TypeList<Mage, Knight>>::value;
-	//int32 len2 = Length<TypeList<Mage, Knight, Archer>>::value;
-	//
-	//
-	//// 3*3 
-	//TypeAt<TL, 0>::Result whoAMI6;
-	//TypeAt<TL, 1>::Result whoAMI7;
-	//TypeAt<TL, 2>::Result whoAMI8;
-
-	//int32 index1 = IndexOf<TL, Mage>::value;
-	//int32 index2 = IndexOf<TL, Archer>::value;
-	//int32 index3 = IndexOf<TL, Dog>::value;
-
-	//bool canConvert1 = Conversion<Player, Knight>::exists;
-	//bool canConvert2 = Conversion<Knight, Player>::exists;
-	//bool canConvert3 = Conversion<Knight, Dog>::exists;
-
-	/*{
-		Player* player = new Knight();
-
-		bool canCast = CanCast<Knight*>(player);
-		Knight* knight = TypeCast<Knight*>(player);
+	// 1) 이미 만들어진 클래스 대상으로는 사용 불가
+	// 2) 순환 (Cycle) 문제
 
 
-		delete player;
-	}*/
 
-	{
-		shared_ptr<Knight> player = make_shared<Knight>();
+	// shared_ptr
+	// weak_ptr
+	// [Knight][RefCountingBlock]
+	// [Knight | RefCountingBlock (uses, weak)]
+	// [T*][RefCountBlocking*]
 
-		shared_ptr<Player> archer = TypeCast<Player>(player);
-		bool canCast = CanCast<Player>(player);
+	// RefCountBlock(useCount(shared), weakCount) 
+	//shared_ptr<Knight> spr = make_shared<Knight>();
+	//weak_ptr<Knight> wpr = spr;
 
-	}
+	//bool expired = wpr.expired();
+	//shared_ptr<Knight> spr2 = wpr.lock();
 
-	for (int32 i = 0; i < 5; i++)
-	{
-		GThreadManager->Launch([]()
-			{
-				while (true)
-				{
-				}
-			});
-	}
+	//// [T*][RefCountBlocking*]
+	//shared_ptr<Knight> spr2 = spr;
 
-	GThreadManager->Join();
+	//bool expired = wpr.expired();
+	//shared_ptr<Knight> spr2 = wpr.lock();
+	//if (spr2 != nullptr)
+	//{
+
+	//}
+
+	KnightRef ref(new Knight());
 }
