@@ -10,6 +10,9 @@
     <Filter Include="Thread">
       <UniqueIdentifier>{7f894c14-abff-4ae7-8efb-9c3496ea098e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{898dc69b-a8ff-4071-9fce-8e4bfa5550c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -51,8 +54,18 @@
     <ClInclude Include="Allocator.h">
       <Filter>Memory</Filter>
     </ClInclude>
-    <ClInclude Include="RefCounting.h" />
-    <ClInclude Include="DeadLockProfiler.h" />
+    <ClInclude Include="DeadLockProfiler.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="IocpEvent.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="IocpCore.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="RefCounting.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -88,7 +101,17 @@
     <ClCompile Include="Memory.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
-    <ClCompile Include="RefCounting.cpp" />
-    <ClCompile Include="DeadLockProfiler.cpp" />
+    <ClCompile Include="DeadLockProfiler.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="IocpCore.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="IocpEvent.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="RefCounting.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
