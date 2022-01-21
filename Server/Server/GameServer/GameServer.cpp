@@ -6,66 +6,29 @@
 #include <windows.h>
 #include <future>
 #include "ThreadManager.h"
-#include "RefCounting.h";
-#include "Memory.h"
-
-#pragma once
-
-//using KnightRef = TSharedPtr<class Knight>;
-using KnightRef = shared_ptr<class Knight>;
-
-class Knight
-{
-public:
-	Knight()
-	{
-		cout << "Knight()" << endl;
-	}
-
-	~Knight()
-	{
-		cout << "~Knight()" << endl;
-	}
-
-	void SetTarget(KnightRef target)
-	{
-		_target = target;
-	}
-
-	KnightRef _target = nullptr;
-};
 
 
+
+using namespace std;
+
+#include "SocketUtils.h"
 
 int main()
 {
-	// 1) 이미 만들어진 클래스 대상으로는 사용 불가
-	// 2) 순환 (Cycle) 문제
+	SOCKET socket = SocketUtils::CreateSocket();
 
+	SocketUtils::BindAnyAddress(socket, 7777);
+	SocketUtils::Listen(socket);
 
+	SOCKET clientSocket = ::accept(socket, nullptr, nullptr);
 
-	// shared_ptr
-	// weak_ptr
-	// [Knight][RefCountingBlock]
-	// [Knight | RefCountingBlock (uses, weak)]
-	// [T*][RefCountBlocking*]
+	cout << "Client Connected!" << endl;
 
-	// RefCountBlock(useCount(shared), weakCount) 
-	//shared_ptr<Knight> spr = make_shared<Knight>();
-	//weak_ptr<Knight> wpr = spr;
+	while (true)
+	{
 
-	//bool expired = wpr.expired();
-	//shared_ptr<Knight> spr2 = wpr.lock();
+	}
 
-	//// [T*][RefCountBlocking*]
-	//shared_ptr<Knight> spr2 = spr;
+	GThreadManager->Join();
 
-	//bool expired = wpr.expired();
-	//shared_ptr<Knight> spr2 = wpr.lock();
-	//if (spr2 != nullptr)
-	//{
-
-	//}
-
-	KnightRef ref(new Knight());
 }

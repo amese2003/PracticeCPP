@@ -176,6 +176,7 @@
     <ClInclude Include="RecvBuffer.h" />
     <ClInclude Include="RefCounting.h" />
     <ClInclude Include="SendBuffer.h" />
+    <ClInclude Include="SocketUtils.h" />
     <ClInclude Include="ThreadManager.h" />
     <ClInclude Include="TypeCast.h" />
     <ClInclude Include="Types.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="RecvBuffer.cpp" />
     <ClCompile Include="RefCounting.cpp" />
     <ClCompile Include="SendBuffer.cpp" />
+    <ClCompile Include="SocketUtils.cpp" />
     <ClCompile Include="ThreadManager.cpp" />
     <ClCompile Include="TypeCast.cpp" />
   </ItemGroup>
