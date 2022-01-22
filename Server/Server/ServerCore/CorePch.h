@@ -1,7 +1,8 @@
 #pragma once
+
 #include "Types.h"
-#include "CoreTLS.h"
 #include "CoreMacro.h"
+#include "CoreTLS.h"
 #include "CoreGlobal.h"
 #include "Container.h"
 
@@ -14,7 +15,7 @@ using namespace std;
 #include <ws2tcpip.h>
 #pragma comment(lib, "ws2_32.lib")
 
-
-
 #include "Lock.h"
 #include "TypeCast.h"
+#include "Memory.h"
+#include "SendBuffer.h"
