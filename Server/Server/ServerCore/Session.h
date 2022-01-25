@@ -107,6 +107,7 @@ struct PacketHeader
 	uint16 id; // 프로토콜 ID (EX. 1 = 로그인, 2....)
 };
 
+
 // [SIZE(2)][id(2)][data...........]
 
 class PacketSession : public Session
