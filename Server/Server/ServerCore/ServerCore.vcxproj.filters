@@ -16,6 +16,9 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{cae0089f-04d5-4d19-8c96-cef08350a87f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Job">
+      <UniqueIdentifier>{6aa0df83-0c1a-46bd-a80d-f586d84bebe7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -99,6 +102,9 @@
     <ClInclude Include="ObjectPool.h">
       <Filter>Memory</Filter>
     </ClInclude>
+    <ClInclude Include="Job.h">
+      <Filter>Job</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -172,6 +178,9 @@
     </ClCompile>
     <ClCompile Include="Listener.cpp">
       <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Job.cpp">
+      <Filter>Job</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
