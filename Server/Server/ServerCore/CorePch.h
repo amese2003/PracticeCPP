@@ -20,4 +20,5 @@ using namespace std;
 #include "Memory.h"
 #include "SendBuffer.h"
 #include "ObjectPool.h"
+#include "LockQueue.h"
 #include "Session.h"
