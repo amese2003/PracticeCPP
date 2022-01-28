@@ -19,6 +19,9 @@
     <Filter Include="Job">
       <UniqueIdentifier>{6aa0df83-0c1a-46bd-a80d-f586d84bebe7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{c8e5d70d-8e69-4783-bc0a-96a528cbf5a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -114,7 +117,12 @@
     <ClInclude Include="LockQueue.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="JobTimer.h" />
+    <ClInclude Include="JobTimer.h">
+      <Filter>Job</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleLog.h">
+      <Filter>Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -201,6 +209,11 @@
     <ClCompile Include="LockQueue.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="JobTimer.cpp" />
+    <ClCompile Include="JobTimer.cpp">
+      <Filter>Job</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleLog.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
