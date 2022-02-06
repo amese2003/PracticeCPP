@@ -1,4 +1,4 @@
-#pragma once0
+#pragma once
 enum class KEY_TYPE
 {
 	UP = VK_UP,
@@ -23,7 +23,7 @@ enum class KEY_STATE
 
 enum
 {
-	KEY_TYPE_COUNT = static_cast<int32>(UINT8_MAX),
+	KEY_TYPE_COUNT = static_cast<int32>(UINT8_MAX + 1),
 	KEY_STATE_COUNT = static_cast<int32>(KEY_STATE::END),
 };
 

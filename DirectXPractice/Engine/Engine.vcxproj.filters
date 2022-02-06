@@ -49,6 +49,9 @@
     <ClInclude Include="Input.h">
       <Filter>Manager</Filter>
     </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Object\Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -95,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Object\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
