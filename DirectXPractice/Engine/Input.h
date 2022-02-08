@@ -1,4 +1,4 @@
-#pragma once
+#pragma once0
 enum class KEY_TYPE
 {
 	UP = VK_UP,
@@ -29,6 +29,8 @@ enum
 
 class Input
 {
+	DECLARE_SINGLE(Input);
+
 public:
 	void Init(HWND hwnd);
 	void Update();
