@@ -48,6 +48,8 @@ void Scene::FinalUpdate()
 
 void Scene::Render()
 {
+	PushLightData();
+
 	for (auto& gameObject : _gameObjects)
 	{
 		if (gameObject->GetCamera() == nullptr)
