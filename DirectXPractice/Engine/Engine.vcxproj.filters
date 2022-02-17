@@ -92,6 +92,7 @@
     <ClInclude Include="Frustum.h">
       <Filter>Object\Component</Filter>
     </ClInclude>
+    <ClInclude Include="RenderTargetGroup.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -182,6 +183,7 @@
     <ClCompile Include="Frustum.cpp">
       <Filter>Object\Component</Filter>
     </ClCompile>
+    <ClCompile Include="RenderTargetGroup.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
