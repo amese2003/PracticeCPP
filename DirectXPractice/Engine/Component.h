@@ -7,10 +7,12 @@ enum class COMPONENT_TYPE : uint8
 	MESH_RENDERER,
 	CAMERA,
 	LIGHT,
+	PARTICLE_SYSTEM,
 	// ...
 	MONO_BEHAVIOUR,
 	END,
 };
+
 
 enum
 {
@@ -43,8 +45,6 @@ public:
 private:
 	friend class GameObject;
 	void SetGameObject(shared_ptr<GameObject> gameObject) { _gameObject = gameObject; }
-
-
 
 protected:
 	COMPONENT_TYPE _type;
