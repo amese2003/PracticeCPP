@@ -95,6 +95,8 @@
     <ClInclude Include="RenderTargetGroup.h" />
     <ClInclude Include="StructuredBuffer.h" />
     <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="InstancingManager.h" />
+    <ClInclude Include="InstancingBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -188,6 +190,8 @@
     <ClCompile Include="RenderTargetGroup.cpp" />
     <ClCompile Include="StructuredBuffer.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="InstancingManager.cpp" />
+    <ClCompile Include="InstancingBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
