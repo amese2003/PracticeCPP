@@ -5,16 +5,14 @@ class RootSignature
 public:
 	void Init();
 
-	ComPtr<ID3D12RootSignature>	GetGraphicsRootSignature() { return _graphicsRootSignature; }
-	ComPtr<ID3D12RootSignature>	GetComputeRootSignature() { return _computeRootSignature; }
+	ComPtr<ID3D12RootSignature>	GetSignature() { return _signature; }
 
 private:
-	void CreateGraphicsRootSignature();
-	void CreateComputeRootSignature();
+	void CreateSamplerDesc();
+	void CreateRootSignature();
 
 private:
-	D3D12_STATIC_SAMPLER_DESC	_samplerDesc;
-	ComPtr<ID3D12RootSignature>	_graphicsRootSignature;
-	ComPtr<ID3D12RootSignature>	_computeRootSignature;
+	ComPtr<ID3D12RootSignature>	_signature;
+	D3D12_STATIC_SAMPLER_DESC _samplerDesc;
 };
 

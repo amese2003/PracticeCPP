@@ -92,11 +92,9 @@
     <ClInclude Include="Frustum.h">
       <Filter>Object\Component</Filter>
     </ClInclude>
-    <ClInclude Include="RenderTargetGroup.h" />
-    <ClInclude Include="StructuredBuffer.h" />
-    <ClInclude Include="ParticleSystem.h" />
-    <ClInclude Include="InstancingManager.h" />
-    <ClInclude Include="InstancingBuffer.h" />
+    <ClInclude Include="RenderTargetGroup.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -187,11 +185,9 @@
     <ClCompile Include="Frustum.cpp">
       <Filter>Object\Component</Filter>
     </ClCompile>
-    <ClCompile Include="RenderTargetGroup.cpp" />
-    <ClCompile Include="StructuredBuffer.cpp" />
-    <ClCompile Include="ParticleSystem.cpp" />
-    <ClCompile Include="InstancingManager.cpp" />
-    <ClCompile Include="InstancingBuffer.cpp" />
+    <ClCompile Include="RenderTargetGroup.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -234,10 +230,7 @@
     <FxCompile Include="..\Resources\Shader\utils.fx">
       <Filter>Shader</Filter>
     </FxCompile>
-    <FxCompile Include="..\Resources\Shader\lighting.fx">
-      <Filter>Shader</Filter>
-    </FxCompile>
-    <FxCompile Include="..\Resources\Shader\foward.fx">
+    <FxCompile Include="..\Resources\Shader\forward.fx">
       <Filter>Shader</Filter>
     </FxCompile>
     <FxCompile Include="..\Resources\Shader\compute.fx">
@@ -249,7 +242,7 @@
     <FxCompile Include="..\Resources\Shader\deferred.fx">
       <Filter>Shader</Filter>
     </FxCompile>
-    <FxCompile Include="..\Resources\Shader\Shadow.fx">
+    <FxCompile Include="..\Resources\Shader\shadow.fx">
       <Filter>Shader</Filter>
     </FxCompile>
   </ItemGroup>
