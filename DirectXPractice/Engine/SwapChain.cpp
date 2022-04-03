@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "SwapChain.h"
 
-
 void SwapChain::Init(const WindowInfo& info, ComPtr<ID3D12Device> device, ComPtr<IDXGIFactory> dxgi, ComPtr<ID3D12CommandQueue> cmdQueue)
 {
 	CreateSwapChain(info, dxgi, cmdQueue);
@@ -42,4 +41,3 @@ void SwapChain::CreateSwapChain(const WindowInfo& info, ComPtr<IDXGIFactory> dxg
 
 	dxgi->CreateSwapChain(cmdQueue.Get(), &sd, &_swapChain);
 }
-

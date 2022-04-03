@@ -19,6 +19,7 @@ public:
 	void SetLayerName(uint8 index, const wstring& name);
 	const wstring& IndexToLayerName(uint8 index) { return _layerNames[index]; }
 	uint8 LayerNameToIndex(const wstring& name);
+
 public:
 	shared_ptr<Scene> GetActiveScene() { return _activeScene; }
 
