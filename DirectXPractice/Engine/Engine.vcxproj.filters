@@ -95,6 +95,7 @@
     <ClInclude Include="RenderTargetGroup.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="InstancingBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -188,6 +189,7 @@
     <ClCompile Include="RenderTargetGroup.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="InstancingBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
