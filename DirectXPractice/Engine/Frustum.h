@@ -12,7 +12,6 @@ enum PLANE_TYPE : uint8
 	PLANE_END
 };
 
-
 class Frustum
 {
 public:
