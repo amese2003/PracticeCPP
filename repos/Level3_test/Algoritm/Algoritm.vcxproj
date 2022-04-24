@@ -215,6 +215,7 @@
     <ClCompile Include="LIS.cpp" />
     <ClCompile Include="LockAndKey.cpp" />
     <ClCompile Include="LockFreeStack.cpp" />
+    <ClCompile Include="LongMatch.cpp" />
     <ClCompile Include="LRUCache.cpp" />
     <ClCompile Include="MakeCalc.cpp" />
     <ClCompile Include="MakeHeap.cpp" />

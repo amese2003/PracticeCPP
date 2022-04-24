@@ -537,6 +537,9 @@
     <ClCompile Include="중복순열.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="LongMatch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default.h">
