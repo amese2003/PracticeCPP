@@ -307,6 +307,7 @@
     <ClCompile Include="WorldPuzzle.cpp" />
     <ClCompile Include="xFar.cpp" />
     <ClCompile Include="xterm.cpp" />
+    <ClCompile Include="다음비트숫자.cpp" />
     <ClCompile Include="빙고.cpp" />
     <ClCompile Include="중복순열.cpp" />
   </ItemGroup>
