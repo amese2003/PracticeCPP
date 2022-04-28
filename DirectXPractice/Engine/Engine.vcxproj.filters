@@ -99,6 +99,9 @@
     <ClInclude Include="InstancingManager.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="StructedBuffer.h" />
+    <ClInclude Include="Terrain.h">
+      <Filter>Object\Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -196,6 +199,9 @@
     <ClCompile Include="InstancingManager.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="StructedBuffer.cpp" />
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Object\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
