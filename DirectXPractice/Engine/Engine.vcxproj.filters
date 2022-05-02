@@ -96,11 +96,15 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="InstancingBuffer.h" />
-    <ClInclude Include="InstancingManager.h" />
     <ClInclude Include="ParticleSystem.h" />
-    <ClInclude Include="StructedBuffer.h" />
     <ClInclude Include="Terrain.h">
       <Filter>Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="StructuredBuffer.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="InstancingManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -196,11 +200,15 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="InstancingBuffer.cpp" />
-    <ClCompile Include="InstancingManager.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
-    <ClCompile Include="StructedBuffer.cpp" />
     <ClCompile Include="Terrain.cpp">
       <Filter>Object\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuredBuffer.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="InstancingManager.cpp">
+      <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
