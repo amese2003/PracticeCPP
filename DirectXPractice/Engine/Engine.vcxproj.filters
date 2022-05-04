@@ -95,8 +95,6 @@
     <ClInclude Include="RenderTargetGroup.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="InstancingBuffer.h" />
-    <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Terrain.h">
       <Filter>Object\Component</Filter>
     </ClInclude>
@@ -105,6 +103,12 @@
     </ClInclude>
     <ClInclude Include="InstancingManager.h">
       <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="InstancingBuffer.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>Object\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -199,8 +203,6 @@
     <ClCompile Include="RenderTargetGroup.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="InstancingBuffer.cpp" />
-    <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="Terrain.cpp">
       <Filter>Object\Component</Filter>
     </ClCompile>
@@ -209,6 +211,12 @@
     </ClCompile>
     <ClCompile Include="InstancingManager.cpp">
       <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="InstancingBuffer.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>Object\Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
