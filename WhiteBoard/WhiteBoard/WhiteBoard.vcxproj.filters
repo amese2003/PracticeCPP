@@ -18,6 +18,9 @@
     <ClCompile Include="Big.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="ifsort.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">

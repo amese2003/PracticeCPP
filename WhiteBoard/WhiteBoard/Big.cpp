@@ -29,4 +29,5 @@ int Test1()
     int b = 20;
     int c = GetMax(a, b);
     cout << c << endl;
+    return 0;
 }
