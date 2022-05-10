@@ -24,6 +24,9 @@
     <ClCompile Include="GetMaxSum.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="연못크기.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
