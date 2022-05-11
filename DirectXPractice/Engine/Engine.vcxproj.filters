@@ -110,6 +110,12 @@
     <ClInclude Include="ParticleSystem.h">
       <Filter>Object\Component</Filter>
     </ClInclude>
+    <ClInclude Include="SphereCollider.h">
+      <Filter>Object\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCollider.h">
+      <Filter>Object\Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -218,6 +224,12 @@
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>Object\Component</Filter>
     </ClCompile>
+    <ClCompile Include="BaseCollider.cpp">
+      <Filter>Object\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereCollider.cpp">
+      <Filter>Object\Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -240,6 +252,9 @@
     </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{eab614e0-6e5e-4069-a69b-edab70465392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Collider">
+      <UniqueIdentifier>{3d983fee-2e1f-4b81-83e5-2ef1f0089da8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
