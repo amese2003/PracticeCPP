@@ -27,6 +27,9 @@
     <ClCompile Include="연못크기.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="벨만포드_최소수정.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">

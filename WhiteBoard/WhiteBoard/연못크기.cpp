@@ -47,5 +47,7 @@ int lakeSize()
 		});
 
 	cout << res[0] << endl;
+
+	return 0;
 }
 
