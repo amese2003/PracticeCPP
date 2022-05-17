@@ -116,6 +116,9 @@
     <ClInclude Include="BaseCollider.h">
       <Filter>Object\Collider</Filter>
     </ClInclude>
+    <ClInclude Include="FBXLoader.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -229,6 +232,9 @@
     </ClCompile>
     <ClCompile Include="SphereCollider.cpp">
       <Filter>Object\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="FBXLoader.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
