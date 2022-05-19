@@ -119,6 +119,9 @@
     <ClInclude Include="FBXLoader.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="MeshData.h">
+      <Filter>Object\Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -235,6 +238,9 @@
     </ClCompile>
     <ClCompile Include="FBXLoader.cpp">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshData.cpp">
+      <Filter>Object\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
