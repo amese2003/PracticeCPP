@@ -7,6 +7,7 @@ enum class OBJECT_TYPE : uint8
 	COMPONENT,
 	MATERIAL,
 	MESH,
+	MESH_DATA,
 	SHADER,
 	TEXTURE,
 
@@ -17,7 +18,6 @@ enum
 {
 	OBJECT_TYPE_COUNT = static_cast<uint8>(OBJECT_TYPE::END)
 };
-
 
 class Object
 {
