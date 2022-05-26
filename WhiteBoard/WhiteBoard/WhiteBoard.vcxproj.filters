@@ -30,6 +30,9 @@
     <ClCompile Include="벨만포드_최소수정.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="카카오_길찾기.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
