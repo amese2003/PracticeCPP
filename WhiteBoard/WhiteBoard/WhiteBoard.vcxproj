@@ -160,6 +160,7 @@
     <ClCompile Include="벨만포드_최소수정.cpp" />
     <ClCompile Include="연못크기.cpp" />
     <ClCompile Include="카카오_길찾기.cpp" />
+    <ClCompile Include="카카오_대기시간.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

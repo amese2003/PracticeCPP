@@ -33,6 +33,9 @@
     <ClCompile Include="카카오_길찾기.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="카카오_대기시간.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
