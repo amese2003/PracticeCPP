@@ -39,6 +39,9 @@
     <ClCompile Include="문자열압축.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="실패율.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
