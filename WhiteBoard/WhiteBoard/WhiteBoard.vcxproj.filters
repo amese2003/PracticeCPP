@@ -42,6 +42,9 @@
     <ClCompile Include="실패율.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="순위.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
