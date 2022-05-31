@@ -160,6 +160,7 @@
     <ClCompile Include="문자열압축.cpp" />
     <ClCompile Include="벨만포드_최소수정.cpp" />
     <ClCompile Include="순위.cpp" />
+    <ClCompile Include="숫자문자열과영단어.cpp" />
     <ClCompile Include="실패율.cpp" />
     <ClCompile Include="연못크기.cpp" />
     <ClCompile Include="카카오_길찾기.cpp" />
